@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>li 包含浮动元素存在间隙</title>
+
+<style>
+ul,li{ margin:0; padding:0; list-style:none;}
+li{ background-color:#f00; overflow:hidden; height:26px;  }
+span{ float:right; }
+li a{ float:left}
+</style>
+</head>
+
+<body>
+
+ie6\7bug: li 包含浮动元素存在间隙<br />
+
+触发条件：1、li拥有haslayout； 2、包含浮动子元素并且子元素后面没有其他不浮动的元素<br />
+
+解决方法：<br />
+1 给UL设置宽度，让li浮动; <br />
+2 去掉li的haslayout。比如给li设置高度触发了haslayout的情况,如果li中内容只有一行可以使用line-height代替height<br />
+
+3 给li加vertical-align:middle 
+
+<ul>
+<li><a href="#">包含两个子元素浮动</a><span>2012-9-16</span></li>
+<li><a href="#">包含一个浮动子元素</a></li>
+<li><a href="#">浮动元素后有一个非浮动的元素</a><strong>strong</strong></li>
+<li><span href="#">3wwwwwwwwwwwwwwwwwww</span></li>
+</ul>
+
+参考：http://www.woaicss.com/article/hack/hack20.htm<br />
+http://www.yao018.com/?p=176
+</body>
+</html>

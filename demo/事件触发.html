@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<div onclick="div_click()">
+	<a id="a1" onclick="a_click()" href="http://www.baidu.com">baidu</A>
+</div>
+
+
+<button id="btn" onclick="btn_click()">触发链接点击</button>
+
+<script>
+
+function div_click(){
+	
+	alert("div_click");
+	
+}
+
+function a_click(){
+	
+	alert("a_click:" +  event.targetElement + " "+ event.cancelBubble);
+
+}
+	
+	
+function btn_click(){
+
+
+	var a =document.getElementById("a1")
+	
+	var eve = document.createEventObject();
+	
+	//eve.cancelBubble  =  true;//取消元素事件冒泡，取消元素事件的默认行为
+	
+	eve.targetElement = "btn_click"
+	
+	a.fireEvent("onclick", eve);
+	
+	//event.cancelBubble = true;
+
+}
+
+
+
+</script>
+</body>
+</html>

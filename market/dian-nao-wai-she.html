@@ -1,0 +1,427 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>电脑周边 - 买了网</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script>
+        var secret = "d2b01e691c2659bafca6f63f598ce2d2",
+            message = "d2b01e691c2659bafca6f63f598ce2d2app_key21229350timestamp{$timestamp}d2b01e691c2659bafca6f63f598ce2d2",
+            page = 1,
+            size = 18,
+            selectedCid = 11;
+    </script>
+</head>
+<body>
+<div class="header">
+	<div class="pagebox">
+    	<div class="logo"><img src="/images/logo.jpg" width="147" height="60"></div>
+
+	    <ul class="nav">
+            <li><a href="/">热销</a></li> 
+            <li><a href="/market/shi-shang-nv-zhuang.html">发现</a></li>
+            <li><a href="/#sales">促销</a></li>
+            <li class="user"><a href="/#login">登陆</a> <a href="/#login">注册</a></li>
+   	    </ul>
+    </div>
+</div>
+<div class="mod-options">
+    <ul class="list" id="sort">
+        <li class="select" data-sort="selected">精选</li>
+        <li  data-sort="volume_desc">畅销</li>
+        <li data-sort="volume_asc">新品</li>
+        <li data-sort="price_asc">白菜价</li>
+    </ul>
+    <div class="links">
+    	<a href="javascript:void(0)" onclick="addFavor()">收藏本站</a> | <a href="javascript:void(0);" onclick="setHome(this,'http://www.buyed.cn');">设为主页</a>
+    </div>
+</div>
+
+<div id="Waterfall" class="waterfall"> 
+    <div class="item sidenav" id="sidenav">
+  	    <h2 class="title">商品分类</h2>
+        <ul class="items"><li><h3><a target="_blank" href="/market/shi-shang-nv-zhuang.html">时尚女装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/zhen-zhi-shan.html">毛针织衫</a> <a target="_blank" href="/market/mian-yi.html">棉衣/棉服</a> <a target="_blank" href="/market/chen-shan.html">衬衫</a> <a target="_blank" href="/market/ku-zhi.html">裤子</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nv-xie.html">精品女鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/xue-zhi.html">靴子</a> <a target="_blank" href="/market/fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/di-bang-xie.html">低帮鞋</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nan-zhuang.html">精品男装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-chen-shan.html">衬衫</a> <a target="_blank" href="/market/nan-jia-ke.html">夹克</a> <a target="_blank" href="/market/nan-feng-yi.html">风衣</a> <a target="_blank" href="/market/nan-wei-yi.html">卫衣</a> <a target="_blank" href="/market/nan-yu-rong-fu.html">羽绒服</a> <a target="_blank" href="/market/nan-xi-fu.html">西服</a></p></li><li><h3><a target="_blank" href="/market/liu-xing-nan-xie.html">流行男鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/nan-gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/nan-xue-zhi.html">靴子</a></p></li><li><h3><a target="_blank" href="/market/shou-ji.html">手机数码</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/shou-ji.html">手机</a> <a target="_blank" href="/market/mp3-mp4.html">MP3/MP4</a> <a target="_blank" href="/market/xiang-ji.html">数码相机</a> <a target="_blank" href="/market/dian-zhi-shu.html">电子书</a></p></li><li class ="li-hover"><h3><a target="_blank" href="/market/dian-nao-wai-she.html">电脑周边</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/jian-pan.html">键盘</a> <a target="_blank" href="/market/xian-shi-qi.html">显示器</a> <a target="_blank" href="/market/yin-xiang.html">音箱</a> <a target="_blank" href="/market/you-xian-shu-biao.html">有线鼠标</a> <a target="_blank" href="/market/wu-xian-shu-biao.html">无线鼠标</a></p></li><li><h3><a target="_blank" href="/market/jia-ju-shi-pin.html">家居饰品</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/bai-jian.html">摆件</a> <a target="_blank" href="/market/chuang-yi-shi-pin.html">创意饰品</a> <a target="_blank" href="/market/nao-zhong.html">闹钟</a></p></li></ul> 
+        <div class="tags" id="tags">
+            <div class="tags-content">
+                <span class="tags-title">电脑周边 ：</span> 
+                <span  id="tmallSubCids"></span>
+            </div>
+         </div>
+    </div>
+    
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=13056848548&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="13056848548">
+                        <img src="http://img06.taobaocdn.com/bao/uploaded/i6/T1J562XdljXXbEMWYb_123133.jpg_210x1000.jpg" width="210" alt="正品包邮茶香手枕 护腕鼠标垫 护腕垫 防鼠标手托 腕托可当键盘垫"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥28.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：72.72
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>正品包邮茶香手枕 护腕鼠标垫 护腕垫 防鼠标手托 腕托可当键盘垫</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=13607224773&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="13607224773">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1IEEgXXVaXXaCorfb_093157.jpg_210x1000.jpg" width="210" alt="Wacom CTL470手绘板 数位板 bamboo CTL-470 绘图板 三代促销热卖"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥580.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：71.82
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>Wacom CTL470手绘板 数位板 bamboo CTL-470 绘图板 三代促销热卖</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12982529907&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12982529907">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1hdWMXgVrXXbFkfrb_093712.jpg_210x1000.jpg" width="210" alt="送鼠标垫 省电设计 罗技 M525 激光级笔记本无线鼠标 三年质保"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥139.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：71.56
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>送鼠标垫 省电设计 罗技 M525 激光级笔记本无线鼠标 三年质保</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16287561514&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16287561514">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T15S_1Xg8jXXb93O7W_023835.jpg_210x1000.jpg" width="210" alt="极智 GA53 游戏鼠标垫 超大 CF魔兽世界dota 大码电脑鼠标垫 包邮"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥25.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：71.20
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>极智 GA53 游戏鼠标垫 超大 CF魔兽世界dota 大码电脑鼠标垫 包邮</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19887368280&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19887368280">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1.YvPXbViXXajC2I2_043803.jpg_210x1000.jpg" width="210" alt="包邮 黑爵雷鹰7键蓝光呼吸灯 游戏鼠标 有线USB电脑鼠标 送鼠标垫"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥98.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：70.62
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮 黑爵雷鹰7键蓝光呼吸灯 游戏鼠标 有线USB电脑鼠标 送鼠标垫</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15837038844&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15837038844">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T18kUXXdteXXX.rwba_120853.jpg_210x1000.jpg" width="210" alt="正品无异味包邮 智派记忆硅胶手托护腕 鼠标垫 护腕垫 防止鼠标手"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥29.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：70.48
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>正品无异味包邮 智派记忆硅胶手托护腕 鼠标垫 护腕垫 防止鼠标手</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12268892335&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12268892335">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1FHKjXkNoXXX_2V3Z_030948.jpg_210x1000.jpg" width="210" alt="黑爵 甲虫之王 专业游戏大鼠标 6D操控 USB镀金接口 欧姆龙按键"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥125.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.87
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>黑爵 甲虫之王 专业游戏大鼠标 6D操控 USB镀金接口 欧姆龙按键</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=8853125767&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="8853125767">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1U8rlXihbXXa21fvX_114837.jpg_210x1000.jpg" width="210" alt="SteelSeries赛睿Qck Mass游戏鼠标垫 黑色/天禄/白色【官方授权】"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥66.90</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.80
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>SteelSeries赛睿Qck Mass游戏鼠标垫 黑色/天禄/白色【官方授权】</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=10644798605&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="10644798605">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1wqvMXc8cXXbuVDcS_010220.jpg_210x1000.jpg" width="210" alt="送CD笔正品迪士尼 CD包 80片CD包 碟包 米奇光盘包 CD盒 光盘盒"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥9.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.67
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>送CD笔正品迪士尼 CD包 80片CD包 碟包 米奇光盘包 CD盒 光盘盒</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17672864436&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17672864436">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1U0L5XbtiXXac9.3._083721.jpg_210x1000.jpg" width="210" alt="顺丰包邮 漫步者M0pro便携式床头音乐闹钟插卡小音箱闹钟音箱"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥299.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.01
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>顺丰包邮 漫步者M0pro便携式床头音乐闹钟插卡小音箱闹钟音箱</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17720291203&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17720291203">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1fJsjXl8aXXaOZuPX_115046.jpg_210x1000.jpg" width="210" alt="包邮e-3lue宜博眼镜蛇鼠标电竞游戏鼠标调速/有线鼠标套装炫光版"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥39.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.50
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮e-3lue宜博眼镜蛇鼠标电竞游戏鼠标调速/有线鼠标套装炫光版</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12602219636&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12602219636">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1VCrZXiXdXXX5ZUc8_102110.jpg_210x1000.jpg" width="210" alt="商城正品 华硕DRW-24D1ST 华硕24X 串口 DVD 刻录机 正品行货"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥149.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.50
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>商城正品 华硕DRW-24D1ST 华硕24X 串口 DVD 刻录机 正品行货</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12871438940&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12871438940">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1LWmvXgN2XXaD3rZU_013747.jpg_210x1000.jpg" width="210" alt="包邮 宜博 眼镜蛇 CF CS游戏键鼠套装 有线USB电脑笔记本键盘套装"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥124.21</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.47
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮 宜博 眼镜蛇 CF CS游戏键鼠套装 有线USB电脑笔记本键盘套装</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=13862962037&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="13862962037">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1cR6SXb8jXXc2GSvb_095213.jpg_210x1000.jpg" width="210" alt="包邮 宜博/E-3LUE 眼镜蛇 发光游戏鼠标 CF/CS 电脑鼠标 送鼠标垫"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥39.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.46
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮 宜博/E-3LUE 眼镜蛇 发光游戏鼠标 CF/CS 电脑鼠标 送鼠标垫</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=20113928585&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="20113928585">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1xUgbXXdeXXac1vA8_100411.jpg_210x1000.jpg" width="210" alt="狂送移动电源 漫步者E1100MKII多媒体台式电脑2.1低音炮音箱音响"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥369.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.34
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>狂送移动电源 漫步者E1100MKII多媒体台式电脑2.1低音炮音箱音响</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=14911840957&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="14911840957">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T15G1IXkXkXXa3uxZ7_065053.jpg_210x1000.jpg" width="210" alt="包邮送礼 朗琴X100 便携插卡小音箱 带收音机 老人晨练胎教音响"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥108.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.33
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮送礼 朗琴X100 便携插卡小音箱 带收音机 老人晨练胎教音响</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12782333146&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12782333146">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1Q9HwXkplXXbyMdcU_014217.jpg_210x1000.jpg" width="210" alt="包邮 赛睿SteelSeries Sensei RAW/MLG/Fnatic版【官方授权】"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥358.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.32
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮 赛睿SteelSeries Sensei RAW/MLG/Fnatic版【官方授权】</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=14573815975&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="14573815975">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1MACVXbFfXXc0VKkV_020305.jpg_210x1000.jpg" width="210" alt="黑爵 沙漠之鹰 游戏鼠标 有线USB 发光鼠标 CF 笔记本 台式电脑"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥39.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.27
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>黑爵 沙漠之鹰 游戏鼠标 有线USB 发光鼠标 CF 笔记本 台式电脑</h3>
+                </div>
+            </div>
+        
+</div>
+<div class="loading">正在加载</div>
+<div class="footer">
+	<div class="pagebox contet">
+    	©Copyright 2011-2012 买了网
+    </div>
+</div>
+<div id="gotop" style=" display:none;" class="gotop" style="opacity: 0;"><img width="55" height="55" src="/images/top.png"></div>
+<div class="toolbar" id="toolbar" >
+    <div class="side" data-action="side"><</div>
+    <div class="number" id="number">1</div>
+    <hr class="split" />
+    <div class="actions">
+   <div class="action" >
+        <span class="icon" data-action="top">
+            ↑
+        </span>
+        <span class="name data-action="top">返回顶部</span>
+    </div>
+    <div class="action">
+       <span class="icon" data-action="pre">
+        ←
+        </span>
+        <span class="name"   data-action="pre">后退</span>
+    </div>
+    <div class="action" >
+        <span class="icon" data-action="next">
+            →
+        </span>
+        <span class="name" data-action="next">前进</span>
+    </div>
+    </div>
+   <!-- -->
+</div>
+<script src="/scripts/base-0.1.js"></script>
+<script src="/scripts/common.js?v=20121202"></script>
+<script src="/scripts/md5.js"></script>
+<script src="/scripts/feed.js?v=20121202"></script>
+<script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21229350"></script>
+<script type="text/javascript">
+    feed();
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+</body>
+</html>
+

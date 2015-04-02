@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IE6 链接选择器优先级(rentj1@163.com)</title>
+
+<meta charset="gb2312" />
+<style>
+/*reset*/
+a:hover {
+	text-decoration:underline;
+}
+
+a { text-decoration:none; }
+
+/*page*/
+.test a{ text-decoration:none; }
+#test a{ text-decoration:none; }
+</style>
+
+</head>
+<body>
+<h1>IE6链接伪类选择器优先级bug</h1>
+<p>代码:
+ 
+<code style="white-space:pre;">
+ css
+    /*reset*/
+    a:hover { text-decoration:underline; }
+    a { text-decoration:none; }
+    
+    /*page*/
+    .test a{ text-decoration:none; }
+    #test a{ text-decoration:none; }
+  
+ html:
+    &lt;a href=&quot;#&quot;&gt;a&lt;/a&gt;
+    
+    &lt;div class=&quot;test&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;.test a&lt;/a&gt;
+    &lt;/div&gt;  
+    
+    &lt;div id=&quot;test&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;#test a&lt;/a&gt;
+    &lt;/div&gt;
+</code>
+
+</p>
+
+<p>
+  <strong style="font-size:14px">说明：</strong>
+</p>
+
+<h2>1、a:hover 和 a</h2>
+<div>
+<a href="#">a</a>
+<p>
+	这里选择器“a:hover”使用了伪类优先级高于选择器“a”，之前以为后面a { text-decoration:none; }的会覆盖前面 a:hover {text-decoration:underline;}
+</p>
+</div>
+
+<h2>2、a:hover 和 .test a</h2>
+<div class="test">
+	<a href="#">.test a</a>
+    <p>
+       在IE6中选择器a:hover的优先级高于选择器“.test a”，鼠标移到链接上时链接有线，<br>
+	   在其他浏览器中选择器“.test a”的优先级高于选择器“a:hover”，鼠标移到链接上时链接没有线
+	
+    </p>
+</div>
+
+
+<h2>3、a:hover 和 #test a</h2>
+<div id="test">
+	<a href="#">#test a</a>
+    <p> 这里选择器“#test a”的优先级高于选择器“a:hover”，鼠标移到链接上时链接没有线</p>
+</div>
+</body>
+</html>

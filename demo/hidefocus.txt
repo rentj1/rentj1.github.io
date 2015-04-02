@@ -1,0 +1,24 @@
+a:focus{ outline:none }
+a的 outline:none ，IE7怎么兼容啊
+
+<a hidefocus="true">
+or 
+<a onfocus='this.blur()'>
+
+IE下可以直接在标签里加在hidefocus="true"，对应的JS为el.hideFocus = true;
+
+<a href="some.html" onmousedown="this.blur();">link</a>
+
+a:active{ star: expression(this.onFocus=this.blur()); }
+天猫商城
+
+
+#treeMenu .m_title a{ display:block; color: #fff; width:168px; ie-dummy: expression(this.hideFocus=true); }
+全球股市
+
+http://ued.taobao.com/blog/2011/04/15/onfocus-this-blur/
+
+http://www.planabc.net/tag/outline/
+
+
+

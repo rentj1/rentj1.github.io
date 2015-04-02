@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C11CAE5-5188-4E71-825B-68FC3135728A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Top.Api</RootNamespace>
+    <AssemblyName>TopSdk</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SharpZipLib\Encryption\PkzipClassic.cs" />
+    <Compile Include="SharpZipLib\Encryption\ZipAESStream.cs" />
+    <Compile Include="SharpZipLib\Encryption\ZipAESTransform.cs" />
+    <Compile Include="SharpZipLib\Core\PathFilter.cs" />
+    <Compile Include="SharpZipLib\Core\IScanFilter.cs" />
+    <Compile Include="SharpZipLib\Core\StreamUtils.cs" />
+    <Compile Include="SharpZipLib\Core\INameTransform.cs" />
+    <Compile Include="SharpZipLib\Core\WindowsPathUtils.cs" />
+    <Compile Include="SharpZipLib\Core\FileSystemScanner.cs" />
+    <Compile Include="SharpZipLib\Core\NameFilter.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipHelperStream.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipConstants.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipInputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\FastZip.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Inflater.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\Deflater.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="SharpZipLib\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipOutputStream.cs" />
+    <Compile Include="SharpZipLib\Zip\WindowsNameTransform.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipNameTransform.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipExtraData.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipEntryFactory.cs" />
+    <Compile Include="SharpZipLib\Zip\IEntryFactory.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipEntry.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipException.cs" />
+    <Compile Include="SharpZipLib\Zip\ZipFile.cs" />
+    <Compile Include="SharpZipLib\SharpZipBaseException.cs" />
+    <Compile Include="SharpZipLib\Checksums\StrangeCRC.cs" />
+    <Compile Include="SharpZipLib\Checksums\IChecksum.cs" />
+    <Compile Include="SharpZipLib\Checksums\CRC32.cs" />
+    <Compile Include="SharpZipLib\Checksums\Adler32.cs" />
+    <Compile Include="Jayrock\Mask.cs" />
+    <Compile Include="Jayrock\Json\Compat.cs" />
+    <Compile Include="Jayrock\Json\BooleanObject.cs" />
+    <Compile Include="Jayrock\Json\Configuration\ListSectionHandler.cs" />
+    <Compile Include="Jayrock\Json\Configuration\TypeListSectionHandler.cs" />
+    <Compile Include="Jayrock\Json\Configuration\DictionarySectionHandler.cs" />
+    <Compile Include="Jayrock\Json\InternetDate.cs" />
+    <Compile Include="Jayrock\Json\UnixTime.cs" />
+    <Compile Include="Jayrock\Json\Collections\KeyedCollection.cs" />
+    <Compile Include="Jayrock\Json\Diagnostics\DebugString.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonRecorder.cs" />
+    <Compile Include="Jayrock\Json\Json\InvalidMemberException.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonTextReader.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonReaderBase.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\JsonIgnoreAttribute.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ArrayImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ByteArrayImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DataRowViewExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\NumberImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ComponentExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ExportAwareExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DataSetExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ExporterBase.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\BooleanImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ImporterBase.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\NameValueCollectionImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\EnumerableExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\AnyImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ListImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ComponentImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\StringImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\EnumImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\GuidImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\NumberExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\StringExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DataTableExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DataRowExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\NameValueCollectionExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\BooleanExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DictionaryImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ImportAwareImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DictionaryExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DateTimeExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DateTimeImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\ByteArrayExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\Converters\DataViewExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\JsonConvert.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\ExporterListSectionHandler.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\IJsonImportable.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\CustomTypeDescriptor.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\ImporterCollection.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\IImporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\ExportContext.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\ImportContext.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\IJsonExportable.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\IExporter.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\ExporterCollection.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\AnyType.cs" />
+    <Compile Include="Jayrock\Json\Json\Conversion\ImporterListSectionHandler.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonBoolean.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonWriterBracket.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonException.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonToken.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonWriterBase.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonTextWriter.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonTokenClass.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonReader.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonWriter.cs" />
+    <Compile Include="Jayrock\Json\Json\EmptyJsonWriter.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonArray.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonNumber.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonString.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonNull.cs" />
+    <Compile Include="Jayrock\Json\Json\BufferedCharReader.cs" />
+    <Compile Include="Jayrock\Json\Json\JsonObject.cs" />
+    <Compile Include="Jayrock\Json\IndentedTextWriter.cs" />
+    <Compile Include="TopDictionary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Parser\TopJsonReader.cs" />
+    <Compile Include="Parser\TopJsonParser.cs" />
+    <Compile Include="Parser\ITopReader.cs" />
+    <Compile Include="Parser\ITopParser.cs" />
+    <Compile Include="Parser\TopAttribute.cs" />
+    <Compile Include="Parser\TopXmlParser.cs" />
+    <Compile Include="DefaultTopLogger.cs" />
+    <Compile Include="ITopLogger.cs" />
+    <Compile Include="TopObject.cs" />
+    <Compile Include="Jushita\JushitaConfiguration.cs" />
+    <Compile Include="Jushita\JushitaTopClient.cs" />
+    <Compile Include="TopResponse.cs" />
+    <Compile Include="ITopUploadRequest.cs" />
+    <Compile Include="Util\AtsUtils.cs" />
+    <Compile Include="Util\RequestValidator.cs" />
+    <Compile Include="Util\TopContext.cs" />
+    <Compile Include="Util\TopUtils.cs" />
+    <Compile Include="Util\FileItem.cs" />
+    <Compile Include="Util\WebUtils.cs" />
+    <Compile Include="DefaultTopClient.cs" />
+    <Compile Include="Stream\TopCometSysErrorException.cs" />
+    <Compile Include="Stream\TopCometException.cs" />
+    <Compile Include="Stream\IStreamImplementation.cs" />
+    <Compile Include="Stream\TopCometStreamRequest.cs" />
+    <Compile Include="Stream\Message\IMessageHandlerConfiguration.cs" />
+    <Compile Include="Stream\Message\MessageStreamImpl.cs" />
+    <Compile Include="Stream\Message\ITopCometMessageListener.cs" />
+    <Compile Include="Stream\Message\MessageListenerDemo.cs" />
+    <Compile Include="Stream\Message\StreamMsgConsumeFactory.cs" />
+    <Compile Include="Stream\StreamConstants.cs" />
+    <Compile Include="Stream\AbstractStreamImpl.cs" />
+    <Compile Include="Stream\TopCometStreamImpl.cs" />
+    <Compile Include="Stream\TopCometStreamFactory.cs" />
+    <Compile Include="Stream\ITopCometStream.cs" />
+    <Compile Include="Stream\Configuration.cs" />
+    <Compile Include="Stream\Connect\ConnectionListenerDemo.cs" />
+    <Compile Include="Stream\Connect\HttpClient.cs" />
+    <Compile Include="Stream\Connect\HttpResponse.cs" />
+    <Compile Include="Stream\Connect\IHttpConnectionConfiguration.cs" />
+    <Compile Include="Stream\Connect\IConnectionLifeCycleListener.cs" />
+    <Compile Include="ITopClient.cs" />
+    <Compile Include="TopException.cs" />
+    <Compile Include="AutoRetryTopClient.cs" />
+    <Compile Include="ITopRequest.cs" />
+    <Compile Include="Domain\UserCredit.cs" />
+    <Compile Include="Domain\Location.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\PromotionInShop.cs" />
+    <Compile Include="Domain\PromotionDisplayTop.cs" />
+    <Compile Include="Domain\PromotionInItem.cs" />
+    <Compile Include="Domain\FavoriteItem.cs" />
+    <Compile Include="Domain\ItemProp.cs" />
+    <Compile Include="Domain\FavoriteShop.cs" />
+    <Compile Include="Domain\Task.cs" />
+    <Compile Include="Domain\LocalityLife.cs" />
+    <Compile Include="Domain\DescModuleInfo.cs" />
+    <Compile Include="Domain\Area.cs" />
+    <Compile Include="Domain\Subtask.cs" />
+    <Compile Include="Domain\Sku.cs" />
+    <Compile Include="Domain\Video.cs" />
+    <Compile Include="Domain\TaobaokeReportMember.cs" />
+    <Compile Include="Domain\ShopScore.cs" />
+    <Compile Include="Domain\SellerCat.cs" />
+    <Compile Include="Domain\FoodSecurity.cs" />
+    <Compile Include="Domain\KfcSearchResult.cs" />
+    <Compile Include="Domain\TaobaokeReport.cs" />
+    <Compile Include="Domain\TaobaokeItem.cs" />
+    <Compile Include="Domain\TaobaokeShop.cs" />
+    <Compile Include="Domain\ItemImg.cs" />
+    <Compile Include="Domain\Feature.cs" />
+    <Compile Include="Domain\ShopCat.cs" />
+    <Compile Include="Domain\Shop.cs" />
+    <Compile Include="Domain\SelectedItem.cs" />
+    <Compile Include="Domain\PropImg.cs" />
+    <Compile Include="Domain\ItemCat.cs" />
+    <Compile Include="Domain\PropValue.cs" />
+    <Compile Include="Domain\TmallTmCat.cs" />
+    <Compile Include="Domain\TmallSearchTmItem.cs" />
+    <Compile Include="Domain\TaobaokeItemDetail.cs" />
+    <Compile Include="Domain\Item.cs" />
+    <Compile Include="Request\UserBuyerGetRequest.cs" />
+    <Compile Include="Request\ItemcatsGetRequest.cs" />
+    <Compile Include="Request\ItempropsGetRequest.cs" />
+    <Compile Include="Request\ItempropvaluesGetRequest.cs" />
+    <Compile Include="Request\ItemGetRequest.cs" />
+    <Compile Include="Request\ItemSkuGetRequest.cs" />
+    <Compile Include="Request\ItemSkusGetRequest.cs" />
+    <Compile Include="Request\ItemsListGetRequest.cs" />
+    <Compile Include="Request\UmpPromotionGetRequest.cs" />
+    <Compile Include="Request\AreasGetRequest.cs" />
+    <Compile Include="Request\SellercatsListGetRequest.cs" />
+    <Compile Include="Request\ShopGetRequest.cs" />
+    <Compile Include="Request\ShopcatsListGetRequest.cs" />
+    <Compile Include="Request\TaobaokeCaturlGetRequest.cs" />
+    <Compile Include="Request\TaobaokeItemsCouponGetRequest.cs" />
+    <Compile Include="Request\TaobaokeItemsDetailGetRequest.cs" />
+    <Compile Include="Request\TaobaokeItemsGetRequest.cs" />
+    <Compile Include="Request\TaobaokeItemsRelateGetRequest.cs" />
+    <Compile Include="Request\TaobaokeListurlGetRequest.cs" />
+    <Compile Include="Request\TaobaokeReportGetRequest.cs" />
+    <Compile Include="Request\TaobaokeShopsGetRequest.cs" />
+    <Compile Include="Request\TaobaokeShopsRelateGetRequest.cs" />
+    <Compile Include="Request\TaobaokeWidgetItemsConvertRequest.cs" />
+    <Compile Include="Request\TaobaokeWidgetShopsConvertRequest.cs" />
+    <Compile Include="Request\TaobaokeWidgetUrlConvertRequest.cs" />
+    <Compile Include="Request\FeedbackAddRequest.cs" />
+    <Compile Include="Request\KfcKeywordSearchRequest.cs" />
+    <Compile Include="Request\TimeGetRequest.cs" />
+    <Compile Include="Request\TopatsResultGetRequest.cs" />
+    <Compile Include="Request\CategoryrecommendItemsGetRequest.cs" />
+    <Compile Include="Request\ItemrecommendItemsGetRequest.cs" />
+    <Compile Include="Request\ShoprecommendItemsGetRequest.cs" />
+    <Compile Include="Request\ShoprecommendShopsGetRequest.cs" />
+    <Compile Include="Request\UserrecommendItemsGetRequest.cs" />
+    <Compile Include="Request\WidgetAppapiruleCheckRequest.cs" />
+    <Compile Include="Request\WidgetLoginstatusGetRequest.cs" />
+    <Compile Include="Request\TmallSelectedItemsSearchRequest.cs" />
+    <Compile Include="Request\TmallTemaiItemsSearchRequest.cs" />
+    <Compile Include="Request\TmallTemaiSubcatsSearchRequest.cs" />
+    <Compile Include="Response\UserBuyerGetResponse.cs" />
+    <Compile Include="Response\ItemcatsGetResponse.cs" />
+    <Compile Include="Response\ItempropsGetResponse.cs" />
+    <Compile Include="Response\ItempropvaluesGetResponse.cs" />
+    <Compile Include="Response\ItemGetResponse.cs" />
+    <Compile Include="Response\ItemSkuGetResponse.cs" />
+    <Compile Include="Response\ItemSkusGetResponse.cs" />
+    <Compile Include="Response\ItemsListGetResponse.cs" />
+    <Compile Include="Response\UmpPromotionGetResponse.cs" />
+    <Compile Include="Response\AreasGetResponse.cs" />
+    <Compile Include="Response\SellercatsListGetResponse.cs" />
+    <Compile Include="Response\ShopGetResponse.cs" />
+    <Compile Include="Response\ShopcatsListGetResponse.cs" />
+    <Compile Include="Response\TaobaokeCaturlGetResponse.cs" />
+    <Compile Include="Response\TaobaokeItemsCouponGetResponse.cs" />
+    <Compile Include="Response\TaobaokeItemsDetailGetResponse.cs" />
+    <Compile Include="Response\TaobaokeItemsGetResponse.cs" />
+    <Compile Include="Response\TaobaokeItemsRelateGetResponse.cs" />
+    <Compile Include="Response\TaobaokeListurlGetResponse.cs" />
+    <Compile Include="Response\TaobaokeReportGetResponse.cs" />
+    <Compile Include="Response\TaobaokeShopsGetResponse.cs" />
+    <Compile Include="Response\TaobaokeShopsRelateGetResponse.cs" />
+    <Compile Include="Response\TaobaokeWidgetItemsConvertResponse.cs" />
+    <Compile Include="Response\TaobaokeWidgetShopsConvertResponse.cs" />
+    <Compile Include="Response\TaobaokeWidgetUrlConvertResponse.cs" />
+    <Compile Include="Response\FeedbackAddResponse.cs" />
+    <Compile Include="Response\KfcKeywordSearchResponse.cs" />
+    <Compile Include="Response\TimeGetResponse.cs" />
+    <Compile Include="Response\TopatsResultGetResponse.cs" />
+    <Compile Include="Response\CategoryrecommendItemsGetResponse.cs" />
+    <Compile Include="Response\ItemrecommendItemsGetResponse.cs" />
+    <Compile Include="Response\ShoprecommendItemsGetResponse.cs" />
+    <Compile Include="Response\ShoprecommendShopsGetResponse.cs" />
+    <Compile Include="Response\UserrecommendItemsGetResponse.cs" />
+    <Compile Include="Response\WidgetAppapiruleCheckResponse.cs" />
+    <Compile Include="Response\WidgetLoginstatusGetResponse.cs" />
+    <Compile Include="Response\TmallSelectedItemsSearchResponse.cs" />
+    <Compile Include="Response\TmallTemaiItemsSearchResponse.cs" />
+    <Compile Include="Response\TmallTemaiSubcatsSearchResponse.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

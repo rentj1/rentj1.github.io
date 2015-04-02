@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<script>
+window.requestAnimFrame = (function(callback){
+    return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function(callback){
+        window.setTimeout(callback, 1000 / 60);
+    };
+})();
+
+function animate(element, props, opts){
+ 
+    // 更新图像
+    var date = new Date();
+    var time = date.getTime();
+    var timeDiff = time - lastTime;
+    var gravity = 2; // 像素 / 秒^2
+    var speedIncrementEachFrame = gravity * timeDiff / 1000; // 像素 / 秒
+    myRectangle.vy += speedIncrementEachFrame;
+    myRectangle.y += (myRectangle.vy * timeDiff);
+ 
+ 
+    lastTime = time;
+ 
+
+ 
+    // 绘图
+ 
+ 
+    // 请求绘制下一帧
+    requestAnimFrame(function(){
+        animate(lastTime, myRectangle);
+    });
+}
+ 
+
+</script>
+
+
+<div id="xx" style="position:absolute; left:0; top:0; width:100px; height:100px; background-color:#000">
+
+
+</div>
+
+<script>
+
+function animate(element, params, duration){
+	var start = new Date();
+	
+}
+
+var elem = document.getElementById("xx");
+animate(elem, { left:100, top:100 }, 500);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>放大镜</title>
+<style> 
+img{ vertical-align:bottom;}
+.mod_zoom{ overflow:hidden; zoom:1;}
+.mod_zoom .p1 { float:left; position:relative; height:350px; width:350px;  margin-right:5px; cursor:crosshair; }
+.mod_zoom .p1 .mask{ position:absolute; left:0; top:0; width:175px; height:175px; background-color:#fede4f; opacity:0.3; filter: alpha(opacity=30); display:none;}
+.mod_zoom .p2{ position:relative; width:400px; height:400px; overflow:hidden;  display:none;}
+.mod_zoom .p2 .img{ position:absolute; left:0; top:0;}
+</style>
+</head>
+  
+<body>
+<div>
+<div class="mod_zoom">
+<div class="p1" id="p1">
+    <img src="http://img14.360buyimg.com/n1/4071/b350e77e-fc74-4173-81b5-dfe54f425ef6.jpg" id="z1" />
+    <span class="mask" id="m"></span>
+</div>
+<div class="p2" id="p2">
+    <img src="http://img14.360buyimg.com/n0/4071/b350e77e-fc74-4173-81b5-dfe54f425ef6.jpg" class="img" id="z2" />
+</div>
+</div>
+</div>
+  
+<script> 
+  
+function PhotoZoomer(elements){
+    this.mask = elements.mask; //蒙版
+this.container = elements.container //原图容器
+this.originimg =  elements.originimg; //原图    
+this.bigContainer = elements.bigContainer; //大图容器
+this.bigimg = elements.bigimg;    //大图        
+  
+    this.visible = false;
+     
+    this._bind();
+}
+  
+PhotoZoomer.prototype = {
+     
+    display: function(style){
+            var self = this;
+            self.mask.style.display = style;
+            self.bigContainer.style.display = style;
+    },
+     
+    //计算放大蒙版位置
+    zoom: function(clientX, clientY){
+        var self = this,
+            //位置比例
+            rate = {},        
+            //放大蒙版最大活动范围
+            maxrange = {
+                offsetLeft: self.container.offsetWidth  - self.mask.offsetWidth,
+                offsetTop: self.container.offsetHeight  - self.mask.offsetHeight
+            },
+            //mask left
+            left = clientX - self.container.offsetLeft  - self.mask.offsetWidth/2,
+//mask top
+            top = clientY - self.container.offsetTop - self.mask.offsetHeight/2;
+         
+        if(left < 0) {
+            left = 0;
+        }else if(left> maxrange.offsetLeft) {
+            left = maxrange.offsetLeft;
+        }
+         
+        if(top < 0) {
+            top = 0;
+        }else if(top > maxrange.offsetTop){
+            top = maxrange.offsetTop;
+        }
+        //alert(maxrange.offsetTop);
+         
+        rate.left = left / maxrange.offsetLeft;
+        rate.top = top / maxrange.offsetTop;
+         
+        self.mask.style.left = left + 'px';
+        self.mask.style.top = top + 'px';
+         
+        self.bigimg.style.left = -rate.left * (self.bigimg.offsetWidth - self.bigContainer.offsetWidth) + "px";
+        self.bigimg.style.top = -rate.top * (self.bigimg.offsetHeight - self.bigContainer.offsetHeight) + "px";
+    },
+     
+    _bind: function(){
+        var self = this;
+        self.container.onmouseover = function(e){
+            e = e || window.event;
+            var target = e.targe || e.srcElement;        
+            self.display("block");
+            this.visible = true;
+        };
+         
+        self.container.onmouseout = function(e){
+            e = e || window.event;
+            var target = e.targe || e.srcElement;
+            self.display("none");
+            this.visible = false;
+        };
+         
+        self.container.onmousemove = function(e){
+            e = e || window.event;
+            if(!this.visible )return;//防止元素大小计算错误
+            self.zoom(e.clientX, e.clientY);
+             
+        };
+         
+  
+    }
+};
+     
+function get(id){
+    return document.getElementById(id)    
+}
+  
+var elements = {
+    mask: get("m"),
+    container: get("p1"),
+    originimg: get("z1"),
+    bigContainer: get("p2"),
+    bigimg: get("z2")
+};
+  
+var zoomer = new PhotoZoomer(elements);
+  
+  
+//    alert(elements.container.offsetParent.tagName)
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>流行男鞋 - 买了网</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script>
+        var secret = "d2b01e691c2659bafca6f63f598ce2d2",
+            message = "d2b01e691c2659bafca6f63f598ce2d2app_key21229350timestamp{$timestamp}d2b01e691c2659bafca6f63f598ce2d2",
+            page = 1,
+            size = 18,
+            selectedCid = 50011740;
+    </script>
+</head>
+<body>
+<div class="header">
+	<div class="pagebox">
+    	<div class="logo"><img src="/images/logo.jpg" width="147" height="60"></div>
+
+	    <ul class="nav">
+            <li><a href="/">热销</a></li> 
+            <li><a href="/market/shi-shang-nv-zhuang.html">发现</a></li>
+            <li><a href="/#sales">促销</a></li>
+            <li class="user"><a href="/#login">登陆</a> <a href="/#login">注册</a></li>
+   	    </ul>
+    </div>
+</div>
+<div class="mod-options">
+    <ul class="list" id="sort">
+        <li class="select" data-sort="selected">精选</li>
+        <li  data-sort="volume_desc">畅销</li>
+        <li data-sort="volume_asc">新品</li>
+        <li data-sort="price_asc">白菜价</li>
+    </ul>
+    <div class="links">
+    	<a href="javascript:void(0)" onclick="addFavor()">收藏本站</a> | <a href="javascript:void(0);" onclick="setHome(this,'http://www.buyed.cn');">设为主页</a>
+    </div>
+</div>
+
+<div id="Waterfall" class="waterfall"> 
+    <div class="item sidenav" id="sidenav">
+  	    <h2 class="title">商品分类</h2>
+        <ul class="items"><li><h3><a target="_blank" href="/market/shi-shang-nv-zhuang.html">时尚女装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/zhen-zhi-shan.html">毛针织衫</a> <a target="_blank" href="/market/mian-yi.html">棉衣/棉服</a> <a target="_blank" href="/market/chen-shan.html">衬衫</a> <a target="_blank" href="/market/ku-zhi.html">裤子</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nv-xie.html">精品女鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/xue-zhi.html">靴子</a> <a target="_blank" href="/market/fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/di-bang-xie.html">低帮鞋</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nan-zhuang.html">精品男装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-chen-shan.html">衬衫</a> <a target="_blank" href="/market/nan-jia-ke.html">夹克</a> <a target="_blank" href="/market/nan-feng-yi.html">风衣</a> <a target="_blank" href="/market/nan-wei-yi.html">卫衣</a> <a target="_blank" href="/market/nan-yu-rong-fu.html">羽绒服</a> <a target="_blank" href="/market/nan-xi-fu.html">西服</a></p></li><li class ="li-hover"><h3><a target="_blank" href="/market/liu-xing-nan-xie.html">流行男鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/nan-gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/nan-xue-zhi.html">靴子</a></p></li><li><h3><a target="_blank" href="/market/shou-ji.html">手机数码</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/shou-ji.html">手机</a> <a target="_blank" href="/market/mp3-mp4.html">MP3/MP4</a> <a target="_blank" href="/market/xiang-ji.html">数码相机</a> <a target="_blank" href="/market/dian-zhi-shu.html">电子书</a></p></li><li><h3><a target="_blank" href="/market/dian-nao-wai-she.html">电脑周边</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/jian-pan.html">键盘</a> <a target="_blank" href="/market/xian-shi-qi.html">显示器</a> <a target="_blank" href="/market/yin-xiang.html">音箱</a> <a target="_blank" href="/market/you-xian-shu-biao.html">有线鼠标</a> <a target="_blank" href="/market/wu-xian-shu-biao.html">无线鼠标</a></p></li><li><h3><a target="_blank" href="/market/jia-ju-shi-pin.html">家居饰品</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/bai-jian.html">摆件</a> <a target="_blank" href="/market/chuang-yi-shi-pin.html">创意饰品</a> <a target="_blank" href="/market/nao-zhong.html">闹钟</a></p></li></ul> 
+        <div class="tags" id="tags">
+            <div class="tags-content">
+                <span class="tags-title">流行男鞋 ：</span> 
+                <span  id="tmallSubCids"></span>
+            </div>
+         </div>
+    </div>
+    
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17073311696&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17073311696">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1EYYGXjRqXXcwcZk7_064038.jpg_210x1000.jpg" width="210" alt="秋冬季真皮耐磨牛筋保暖厚底男士皮鞋商务休闲韩版潮流舒适特价鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥396.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：71.73
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>秋冬季真皮耐磨牛筋保暖厚底男士皮鞋商务休闲韩版潮流舒适特价鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19256664458&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19256664458">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1XVr2XfNkXXbWbW3Y_025437.jpg_210x1000.jpg" width="210" alt="PLAYBOY花花公子男鞋正品皮鞋 2012新款春秋商务正装真皮323k178"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥780.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.91
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>PLAYBOY花花公子男鞋正品皮鞋 2012新款春秋商务正装真皮323k178</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=18524076574&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="18524076574">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T19ivJXnlbXXaE3eQ._081822.jpg_210x1000.jpg" width="210" alt="ci'e(其艾）透气手工皮底商务正装男鞋 Whole cut系带皮鞋 牛津鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥580.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.77
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>ci'e(其艾）透气手工皮底商务正装男鞋 Whole cut系带皮鞋 牛津鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17806651283&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17806651283">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T19R65XjRfXXaMj2.W_023451.jpg_210x1000.jpg" width="210" alt="精英保罗冬款真皮男鞋棉鞋男保暖加绒加毛男款高帮鞋雪地G95"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥448.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.59
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>精英保罗冬款真皮男鞋棉鞋男保暖加绒加毛男款高帮鞋雪地G95</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12668168607&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12668168607">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1X.vsXhhbXXaI_Fjb_092631.jpg_210x1000.jpg" width="210" alt="圣帝伯爵冬鞋真皮坡跟老人棉鞋带中老年棉皮鞋子冬季爸爸鞋男S755"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥298.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.59
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>圣帝伯爵冬鞋真皮坡跟老人棉鞋带中老年棉皮鞋子冬季爸爸鞋男S755</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12787670811&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12787670811">
+                        <img src="http://img08.taobaocdn.com/bao/uploaded/i8/T1.oPUXi8hXXaVJEo9_104751.jpg_210x1000.jpg" width="210" alt="FEGO秋冬软底男鞋真皮中老年皮鞋耐磨牛筋底爸爸鞋45464748大码鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥238.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.16
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>FEGO秋冬软底男鞋真皮中老年皮鞋耐磨牛筋底爸爸鞋45464748大码鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12945487166&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12945487166">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1.4yrXbJmXXazrlDX_115922.jpg_210x1000.jpg" width="210" alt="Gesisi男士保暖鞋高帮鞋 男鞋冬季真皮靴 皮鞋雪地靴子男棉鞋211"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥380.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：67.97
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>Gesisi男士保暖鞋高帮鞋 男鞋冬季真皮靴 皮鞋雪地靴子男棉鞋211</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15935997412&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15935997412">
+                        <img src="http://img06.taobaocdn.com/bao/uploaded/i6/T14NvNXexcXXbF83c6_061614.jpg_210x1000.jpg" width="210" alt="包邮特价耐磨牛筋厚底时尚系带男鞋低帮休闲鞋男士真皮大头皮鞋子"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥498.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：67.57
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮特价耐磨牛筋厚底时尚系带男鞋低帮休闲鞋男士真皮大头皮鞋子</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15253113848&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15253113848">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1rBrNXh0fXXbwGvnX_115125.jpg_210x1000.jpg" width="210" alt="ci'e(其艾）皮底透气英伦潮流男皮鞋流苏圆头套脚手绘擦色棕船鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥580.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：67.41
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>ci'e(其艾）皮底透气英伦潮流男皮鞋流苏圆头套脚手绘擦色棕船鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12807508099&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12807508099">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1ZK_sXm8gXXXz9q_b_093149.jpg_210x1000.jpg" width="210" alt="圣帝伯爵韩版棉鞋男棉鞋正品真皮休闲鞋磨砂冬季男鞋高帮冬鞋5389"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥248.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.80
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>圣帝伯爵韩版棉鞋男棉鞋正品真皮休闲鞋磨砂冬季男鞋高帮冬鞋5389</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19164792876&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19164792876">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T16Jj2Xe8mXXcjFOA4_053332.jpg_210x1000.jpg" width="210" alt="冬季商务休闲鞋真皮男鞋保暖豆豆鞋韩版潮流低帮鞋时尚舒适棉皮鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥358.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.53
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>冬季商务休闲鞋真皮男鞋保暖豆豆鞋韩版潮流低帮鞋时尚舒适棉皮鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19264592932&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19264592932">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1kfvFXdNkXXXJwC3T_013125.jpg_210x1000.jpg" width="210" alt="PLAYBOY美国花花公子男鞋正品皮鞋 2012新款流行休闲真牛皮829079"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥515.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.50
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>PLAYBOY美国花花公子男鞋正品皮鞋 2012新款流行休闲真牛皮829079</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=21041996402&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="21041996402">
+                        <img src="http://img06.taobaocdn.com/bao/uploaded/i6/T15gz1Xi4mXXXl8lZ3_051130.jpg_210x1000.jpg" width="210" alt="韩版男士时尚潮流板鞋休闲男鞋冬季真皮加厚高帮保暖牛皮鞋子特价"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥238.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.34
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>韩版男士时尚潮流板鞋休闲男鞋冬季真皮加厚高帮保暖牛皮鞋子特价</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=14811812818&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="14811812818">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T1FtzhXgFmXXamhXTc_095632.jpg_210x1000.jpg" width="210" alt="丽格REGAL专柜正品英伦风流行潮流休闲情侣高帮真牛皮男鞋 T03N"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥1680.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.29
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>丽格REGAL专柜正品英伦风流行潮流休闲情侣高帮真牛皮男鞋 T03N</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12277078052&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12277078052">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1JK6AXm0bXXcjRd6a_120605.jpg_210x1000.jpg" width="210" alt="Gesisi秋冬新款男鞋 英伦真皮男士休闲鞋韩版鞋子 男休闲皮鞋210"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥285.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.06
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>Gesisi秋冬新款男鞋 英伦真皮男士休闲鞋韩版鞋子 男休闲皮鞋210</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=10259771135&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="10259771135">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1jtZcXXxfXXcVbMc4_053026.jpg_210x1000.jpg" width="210" alt="丽格REGAL正品进口固特异正装商务男士皮鞋GORE-TEX透气防水 706R"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥3280.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.06
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>丽格REGAL正品进口固特异正装商务男士皮鞋GORE-TEX透气防水 706R</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=20776796985&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="20776796985">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1dub6Xo0XXXcqv7.T_012600.jpg_210x1000.jpg" width="210" alt="【爱购】康彪天猫正品尖头商务正装鞋低帮牛皮鞋 包邮男鞋 201169"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥338.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.95
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>【爱购】康彪天猫正品尖头商务正装鞋低帮牛皮鞋 包邮男鞋 201169</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15550250757&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15550250757">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T181vNXktlXXbvUYI4_051851.jpg_210x1000.jpg" width="210" alt="PLAYBOY花花公子男鞋正品皮鞋 2012新款流行正装鞋系带真皮627035"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥458.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.91
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>PLAYBOY花花公子男鞋正品皮鞋 2012新款流行正装鞋系带真皮627035</h3>
+                </div>
+            </div>
+        
+</div>
+<div class="loading">正在加载</div>
+<div class="footer">
+	<div class="pagebox contet">
+    	©Copyright 2011-2012 买了网
+    </div>
+</div>
+<div id="gotop" style=" display:none;" class="gotop" style="opacity: 0;"><img width="55" height="55" src="/images/top.png"></div>
+<div class="toolbar" id="toolbar" >
+    <div class="side" data-action="side"><</div>
+    <div class="number" id="number">1</div>
+    <hr class="split" />
+    <div class="actions">
+   <div class="action" >
+        <span class="icon" data-action="top">
+            ↑
+        </span>
+        <span class="name data-action="top">返回顶部</span>
+    </div>
+    <div class="action">
+       <span class="icon" data-action="pre">
+        ←
+        </span>
+        <span class="name"   data-action="pre">后退</span>
+    </div>
+    <div class="action" >
+        <span class="icon" data-action="next">
+            →
+        </span>
+        <span class="name" data-action="next">前进</span>
+    </div>
+    </div>
+   <!-- -->
+</div>
+<script src="/scripts/base-0.1.js"></script>
+<script src="/scripts/common.js?v=20121202"></script>
+<script src="/scripts/md5.js"></script>
+<script src="/scripts/feed.js?v=20121202"></script>
+<script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21229350"></script>
+<script type="text/javascript">
+    feed();
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+</body>
+</html>
+

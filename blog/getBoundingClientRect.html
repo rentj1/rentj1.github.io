@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ie6 getBoundingClientRect 2px差距</title>
+
+<style>
+*{ margin:0; padding:0}
+html{ border:none }
+</style>
+</head>
+
+<body>
+
+getBoundingClientRect 方法可获得页面中某个元素的左，上，右和下分别相对浏览器视窗的距离，在IE6中有2px差距。
+
+<div id="pid">
+<a href="buyed.cn">回首页</a>
+</div> 
+<script>
+
+var getStyle = function( elem, type ){
+
+    return 'getComputedStyle' in window ? getComputedStyle(elem, null)[type] : elem.currentStyle[type];
+
+};
+
+alert(document.documentElement.clientTop)
+
+//alert(getStyle(document.documentElement,"borderWidth"));
+
+alert(document.getElementById("pid").getBoundingClientRect().top);
+
+
+//http://bbs.51js.com/thread-84330-1-1.html
+//http://www.cnblogs.com/qieqing/archive/2008/10/06/1304399.html
+</script>
+</body>
+</html>

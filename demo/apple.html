@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Apple菜单</title>
+<style>
+body{ margin:0 }
+.menu{ text-align:center; position:absolute; bottom:0px; width:100%;}
+</style>
+<script>
+window.onload = function(){
+
+	
+	var container =  document.getElementById("menu");
+	var imgs = document.getElementsByTagName("img");
+	var imax = 150;
+	var left = container.offsetLeft;
+	var top = container.offsetTop;
+	
+	document.onmousemove  = function(e){
+		
+		var x, y, c;
+		e = e || event;
+
+		for(var i=0; i<imgs.length; i++){
+
+			x = imgs[i].offsetLeft + left - e.clientX + imgs[i].offsetWidth/2;
+			y = imgs[i].offsetTop + top - e.clientY + imgs[i].offsetHeight/2;
+			
+			c = Math.sqrt( Math.pow(x, 2) + Math.pow(y, 2) );
+			c = Math.min(c, imax);
+			
+			imgs[i].width = ((imax - c) / imax) * 64 + 64;
+		}
+	};
+}
+</script>
+
+
+</head>
+
+<body>
+<div class="menu" id="menu">
+<a href="http://j.union.ijinshan.com/jump.php?u_key=82020"  target="_blank"><img src="../images/liebao.jpg" width="64" /></a>
+ <a href="http://firefox.com.cn/" target="_blank"><img src="../images/moz.png" width="64" /></a>
+ <a href="http://windows.microsoft.com/zh-CN/internet-explorer/products/ie/home" target="_blank"><img src="../images/ie.png" width="64" /></a>
+ <a href="http://www.opera.com/" target="_blank"><img src="../images/o.png" width="64" /></a>
+</div>
+
+</body>
+</html>

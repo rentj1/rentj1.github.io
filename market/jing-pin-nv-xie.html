@@ -1,0 +1,427 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>精品女鞋 - 买了网</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script>
+        var secret = "d2b01e691c2659bafca6f63f598ce2d2",
+            message = "d2b01e691c2659bafca6f63f598ce2d2app_key21229350timestamp{$timestamp}d2b01e691c2659bafca6f63f598ce2d2",
+            page = 1,
+            size = 18,
+            selectedCid = 50006843;
+    </script>
+</head>
+<body>
+<div class="header">
+	<div class="pagebox">
+    	<div class="logo"><img src="/images/logo.jpg" width="147" height="60"></div>
+
+	    <ul class="nav">
+            <li><a href="/">热销</a></li> 
+            <li><a href="/market/shi-shang-nv-zhuang.html">发现</a></li>
+            <li><a href="/#sales">促销</a></li>
+            <li class="user"><a href="/#login">登陆</a> <a href="/#login">注册</a></li>
+   	    </ul>
+    </div>
+</div>
+<div class="mod-options">
+    <ul class="list" id="sort">
+        <li class="select" data-sort="selected">精选</li>
+        <li  data-sort="volume_desc">畅销</li>
+        <li data-sort="volume_asc">新品</li>
+        <li data-sort="price_asc">白菜价</li>
+    </ul>
+    <div class="links">
+    	<a href="javascript:void(0)" onclick="addFavor()">收藏本站</a> | <a href="javascript:void(0);" onclick="setHome(this,'http://www.buyed.cn');">设为主页</a>
+    </div>
+</div>
+
+<div id="Waterfall" class="waterfall"> 
+    <div class="item sidenav" id="sidenav">
+  	    <h2 class="title">商品分类</h2>
+        <ul class="items"><li><h3><a target="_blank" href="/market/shi-shang-nv-zhuang.html">时尚女装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/zhen-zhi-shan.html">毛针织衫</a> <a target="_blank" href="/market/mian-yi.html">棉衣/棉服</a> <a target="_blank" href="/market/chen-shan.html">衬衫</a> <a target="_blank" href="/market/ku-zhi.html">裤子</a></p></li><li class ="li-hover"><h3><a target="_blank" href="/market/jing-pin-nv-xie.html">精品女鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/xue-zhi.html">靴子</a> <a target="_blank" href="/market/fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/di-bang-xie.html">低帮鞋</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nan-zhuang.html">精品男装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-chen-shan.html">衬衫</a> <a target="_blank" href="/market/nan-jia-ke.html">夹克</a> <a target="_blank" href="/market/nan-feng-yi.html">风衣</a> <a target="_blank" href="/market/nan-wei-yi.html">卫衣</a> <a target="_blank" href="/market/nan-yu-rong-fu.html">羽绒服</a> <a target="_blank" href="/market/nan-xi-fu.html">西服</a></p></li><li><h3><a target="_blank" href="/market/liu-xing-nan-xie.html">流行男鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/nan-gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/nan-xue-zhi.html">靴子</a></p></li><li><h3><a target="_blank" href="/market/shou-ji.html">手机数码</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/shou-ji.html">手机</a> <a target="_blank" href="/market/mp3-mp4.html">MP3/MP4</a> <a target="_blank" href="/market/xiang-ji.html">数码相机</a> <a target="_blank" href="/market/dian-zhi-shu.html">电子书</a></p></li><li><h3><a target="_blank" href="/market/dian-nao-wai-she.html">电脑周边</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/jian-pan.html">键盘</a> <a target="_blank" href="/market/xian-shi-qi.html">显示器</a> <a target="_blank" href="/market/yin-xiang.html">音箱</a> <a target="_blank" href="/market/you-xian-shu-biao.html">有线鼠标</a> <a target="_blank" href="/market/wu-xian-shu-biao.html">无线鼠标</a></p></li><li><h3><a target="_blank" href="/market/jia-ju-shi-pin.html">家居饰品</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/bai-jian.html">摆件</a> <a target="_blank" href="/market/chuang-yi-shi-pin.html">创意饰品</a> <a target="_blank" href="/market/nao-zhong.html">闹钟</a></p></li></ul> 
+        <div class="tags" id="tags">
+            <div class="tags-content">
+                <span class="tags-title">精品女鞋 ：</span> 
+                <span  id="tmallSubCids"></span>
+            </div>
+         </div>
+    </div>
+    
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19320148030&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19320148030">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1ltDKXdFpXXbO3AM9_104307.jpg_210x1000.jpg" width="210" alt="正品米梦芬雪地靴 真皮摇摇靴 厚底松糕休闲公主靴牛皮瘦身摇摇鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥298.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：70.64
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>正品米梦芬雪地靴 真皮摇摇靴 厚底松糕休闲公主靴牛皮瘦身摇摇鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17203351199&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17203351199">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1mzHNXcFdXXafYRc9_074346.jpg_210x1000.jpg" width="210" alt="包邮2012冬新款茱莉芬正品高跟粗跟牛皮舒适女靴子全真皮短靴女鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥488.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.45
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮2012冬新款茱莉芬正品高跟粗跟牛皮舒适女靴子全真皮短靴女鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=20330948719&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="20330948719">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1UhfPXiFjXXbHe1w0_035053.jpg_210x1000.jpg" width="210" alt="正品米梦芬雪地靴 仿兔毛短筒雪地靴 保暖真皮防滑底牛筋底短靴"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥238.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.19
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>正品米梦芬雪地靴 仿兔毛短筒雪地靴 保暖真皮防滑底牛筋底短靴</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17986023713&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17986023713">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1vvZjXkhcXXaEIEg4_054347.jpg_210x1000.jpg" width="210" alt="牛皮羊毛短靴2012新款女鞋冬真皮系带棉鞋保暖两穿雪地靴子616DR"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥488.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.95
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>牛皮羊毛短靴2012新款女鞋冬真皮系带棉鞋保暖两穿雪地靴子616DR</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19469536020&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19469536020">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1St2AXbloXXblE7.V_021452.jpg_210x1000.jpg" width="210" alt="依古莉反季真皮兔毛雪地靴女坡跟中筒靴厚底棉靴磨砂牛皮靴子5854"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥456.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.85
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>依古莉反季真皮兔毛雪地靴女坡跟中筒靴厚底棉靴磨砂牛皮靴子5854</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16909391568&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16909391568">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1OhshXlBeXXaKrD3Y_031007.jpg_210x1000.jpg" width="210" alt="淘金币 2012秋冬新款牛绒真皮兔毛防水台女棉鞋短靴高跟磨砂牛皮"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥788.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.84
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>淘金币 2012秋冬新款牛绒真皮兔毛防水台女棉鞋短靴高跟磨砂牛皮</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16058621116&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16058621116">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T11ZQdXnVaXXXPzdkU_014227.jpg_210x1000.jpg" width="210" alt="2012秋冬新款 真皮松糕鞋厚底高帮鞋潮鞋 内增高运动鞋休闲鞋女鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥254.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.37
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>2012秋冬新款 真皮松糕鞋厚底高帮鞋潮鞋 内增高运动鞋休闲鞋女鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17216543797&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17216543797">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T11wnNXd8kXXb.i8YX_085950.jpg_210x1000.jpg" width="210" alt="锐捷 2012秋冬季新款韩版 低帮松糕底帆布鞋女 时尚休闲潮"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥158.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.34
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>锐捷 2012秋冬季新款韩版 低帮松糕底帆布鞋女 时尚休闲潮</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17300615156&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17300615156">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1jf2WXcdmXXbzeRrb_124755.jpg_210x1000.jpg" width="210" alt="爱唯2012新款真皮高跟兔毛骑士靴防水台磨沙皮短靴厚底翻皮女靴子"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥525.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.07
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>爱唯2012新款真皮高跟兔毛骑士靴防水台磨沙皮短靴厚底翻皮女靴子</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15829242435&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15829242435">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1JtojXhRXXXcRoaDb_122803.jpg_210x1000.jpg" width="210" alt="正品BUZ雪地靴牛皮休闲女鞋 韩版潮情侣棉鞋真皮冬靴中筒男女靴子"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥429.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.85
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>正品BUZ雪地靴牛皮休闲女鞋 韩版潮情侣棉鞋真皮冬靴中筒男女靴子</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=20738732493&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="20738732493">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T17XD2XgxhXXcJ3Ww._110956.jpg_210x1000.jpg" width="210" alt="2012冬季欧美新款粗跟真皮马丁靴厚底高跟皮带扣拉链短靴子机车靴"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥476.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.70
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>2012冬季欧美新款粗跟真皮马丁靴厚底高跟皮带扣拉链短靴子机车靴</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16453233485&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16453233485">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1veD1XhXkXXbtOM.9_103534.jpg_210x1000.jpg" width="210" alt="2012冬款过膝靴长靴英伦马丁靴子高跟防水台拉链全牛皮磨砂女鞋子"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥998.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.61
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>2012冬款过膝靴长靴英伦马丁靴子高跟防水台拉链全牛皮磨砂女鞋子</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15982101621&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15982101621">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T1FlnPXXVXXXbythM6_062111.jpg_210x1000.jpg" width="210" alt="依古莉2012真皮保暖雪地靴女高筒坡跟厚底毛球牛皮磨砂皮靴子8011"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥376.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.55
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>依古莉2012真皮保暖雪地靴女高筒坡跟厚底毛球牛皮磨砂皮靴子8011</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=20979344290&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="20979344290">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1obZbXXdeXXcQbh6a_091407.jpg_210x1000.jpg" width="210" alt="淘金币 冬季新款 菲丝洛芙时尚豆豆鞋 流苏鞋低帮真皮加绒平底保"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥398.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.45
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>淘金币 冬季新款 菲丝洛芙时尚豆豆鞋 流苏鞋低帮真皮加绒平底保</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=13390846630&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="13390846630">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1HDmKXj8cXXc0ayUW_024114.jpg_210x1000.jpg" width="210" alt="韩版鞋手绘鞋 短靴棉鞋 女鞋 毛毛鞋 内增高 保暖秋冬款 兔斯基鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥95.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.41
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>韩版鞋手绘鞋 短靴棉鞋 女鞋 毛毛鞋 内增高 保暖秋冬款 兔斯基鞋</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15617641491&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15617641491">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T1MIDRXhNkXXXN1F.9_102342.jpg_210x1000.jpg" width="210" alt="爱唯中跟真皮全皮女靴头层牛皮骑士靴马靴粗跟长筒靴过膝长靴包邮"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥885.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.36
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>爱唯中跟真皮全皮女靴头层牛皮骑士靴马靴粗跟长筒靴过膝长靴包邮</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19259636744&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19259636744">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1La_EXXlaXXXFYgDX_115300.jpg_210x1000.jpg" width="210" alt="淘金币 娅楠 秋冬新款厚底防水台兔毛真皮粗高跟鞋时尚短靴头层牛"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥888.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.36
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>淘金币 娅楠 秋冬新款厚底防水台兔毛真皮粗高跟鞋时尚短靴头层牛</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15953186655&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15953186655">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T157DIXotrXXXCOJU8_100200.jpg_210x1000.jpg" width="210" alt="淘金币 锐捷 2012新款 秋冬季英伦短靴 棉靴 低帮平底学生女棉鞋"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥158.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.31
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>淘金币 锐捷 2012新款 秋冬季英伦短靴 棉靴 低帮平底学生女棉鞋</h3>
+                </div>
+            </div>
+        
+</div>
+<div class="loading">正在加载</div>
+<div class="footer">
+	<div class="pagebox contet">
+    	©Copyright 2011-2012 买了网
+    </div>
+</div>
+<div id="gotop" style=" display:none;" class="gotop" style="opacity: 0;"><img width="55" height="55" src="/images/top.png"></div>
+<div class="toolbar" id="toolbar" >
+    <div class="side" data-action="side"><</div>
+    <div class="number" id="number">1</div>
+    <hr class="split" />
+    <div class="actions">
+   <div class="action" >
+        <span class="icon" data-action="top">
+            ↑
+        </span>
+        <span class="name data-action="top">返回顶部</span>
+    </div>
+    <div class="action">
+       <span class="icon" data-action="pre">
+        ←
+        </span>
+        <span class="name"   data-action="pre">后退</span>
+    </div>
+    <div class="action" >
+        <span class="icon" data-action="next">
+            →
+        </span>
+        <span class="name" data-action="next">前进</span>
+    </div>
+    </div>
+   <!-- -->
+</div>
+<script src="/scripts/base-0.1.js"></script>
+<script src="/scripts/common.js?v=20121202"></script>
+<script src="/scripts/md5.js"></script>
+<script src="/scripts/feed.js?v=20121202"></script>
+<script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21229350"></script>
+<script type="text/javascript">
+    feed();
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+</body>
+</html>
+

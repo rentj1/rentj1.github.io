@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+var maxNum = 10000;
+//这样的算法呢
+// 题目还原
+var i = 1, arr1 = [], arr2 = [];
+  
+// 生成数组1
+for (; i <= maxNum; i++) {
+    arr1.push(i);
+}
+  
+// 生成数组2
+arr2 = arr1.concat();
+  
+
+// 随机去掉3个数
+for (i = 0; i < 3; i++) {
+   arr2.splice(Math.floor(Math.random() * (arr2.length - 1) + 1), 1);
+}
+
+// 打乱排序
+ arr2.sort(function (a, b) {
+    return Math.floor(Math.random() * 3) - 1;
+});
+
+
+
+
+
+//方法1
+var b = new Date();
+var arr3 = [];
+
+for (i=0; i< maxNum; i++){
+	
+	if(arr2.indexOf(arr1[i]) === -1){
+			arr3.push(arr1[i]) 
+	}
+	if(arr3.length===3) break;
+}
+
+
+console.log(arr3)
+console.log( (new Date())-b);
+
+//方法2
+
+var b = new Date();
+var arr3 = [];
+arr2.sort(function(a,b){ return a-b; });
+for (i=0, j=0 ; j< maxNum; i++, j++){
+	if(arr1[j] !== arr2[i]){
+		arr3.push(arr1[j])
+		i--;
+		if(arr3.length === 3) break;
+	}
+}
+console.log(arr3)
+console.log( (new Date())-b);
+
+</script>
+</body>
+</html>

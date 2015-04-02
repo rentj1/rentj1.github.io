@@ -1,0 +1,427 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>家居饰品 - 买了网</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script>
+        var secret = "d2b01e691c2659bafca6f63f598ce2d2",
+            message = "d2b01e691c2659bafca6f63f598ce2d2app_key21229350timestamp{$timestamp}d2b01e691c2659bafca6f63f598ce2d2",
+            page = 1,
+            size = 18,
+            selectedCid = 50020808;
+    </script>
+</head>
+<body>
+<div class="header">
+	<div class="pagebox">
+    	<div class="logo"><img src="/images/logo.jpg" width="147" height="60"></div>
+
+	    <ul class="nav">
+            <li><a href="/">热销</a></li> 
+            <li><a href="/market/shi-shang-nv-zhuang.html">发现</a></li>
+            <li><a href="/#sales">促销</a></li>
+            <li class="user"><a href="/#login">登陆</a> <a href="/#login">注册</a></li>
+   	    </ul>
+    </div>
+</div>
+<div class="mod-options">
+    <ul class="list" id="sort">
+        <li class="select" data-sort="selected">精选</li>
+        <li  data-sort="volume_desc">畅销</li>
+        <li data-sort="volume_asc">新品</li>
+        <li data-sort="price_asc">白菜价</li>
+    </ul>
+    <div class="links">
+    	<a href="javascript:void(0)" onclick="addFavor()">收藏本站</a> | <a href="javascript:void(0);" onclick="setHome(this,'http://www.buyed.cn');">设为主页</a>
+    </div>
+</div>
+
+<div id="Waterfall" class="waterfall"> 
+    <div class="item sidenav" id="sidenav">
+  	    <h2 class="title">商品分类</h2>
+        <ul class="items"><li><h3><a target="_blank" href="/market/shi-shang-nv-zhuang.html">时尚女装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/zhen-zhi-shan.html">毛针织衫</a> <a target="_blank" href="/market/mian-yi.html">棉衣/棉服</a> <a target="_blank" href="/market/chen-shan.html">衬衫</a> <a target="_blank" href="/market/ku-zhi.html">裤子</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nv-xie.html">精品女鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/xue-zhi.html">靴子</a> <a target="_blank" href="/market/fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/di-bang-xie.html">低帮鞋</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nan-zhuang.html">精品男装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-chen-shan.html">衬衫</a> <a target="_blank" href="/market/nan-jia-ke.html">夹克</a> <a target="_blank" href="/market/nan-feng-yi.html">风衣</a> <a target="_blank" href="/market/nan-wei-yi.html">卫衣</a> <a target="_blank" href="/market/nan-yu-rong-fu.html">羽绒服</a> <a target="_blank" href="/market/nan-xi-fu.html">西服</a></p></li><li><h3><a target="_blank" href="/market/liu-xing-nan-xie.html">流行男鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/nan-gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/nan-xue-zhi.html">靴子</a></p></li><li><h3><a target="_blank" href="/market/shou-ji.html">手机数码</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/shou-ji.html">手机</a> <a target="_blank" href="/market/mp3-mp4.html">MP3/MP4</a> <a target="_blank" href="/market/xiang-ji.html">数码相机</a> <a target="_blank" href="/market/dian-zhi-shu.html">电子书</a></p></li><li><h3><a target="_blank" href="/market/dian-nao-wai-she.html">电脑周边</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/jian-pan.html">键盘</a> <a target="_blank" href="/market/xian-shi-qi.html">显示器</a> <a target="_blank" href="/market/yin-xiang.html">音箱</a> <a target="_blank" href="/market/you-xian-shu-biao.html">有线鼠标</a> <a target="_blank" href="/market/wu-xian-shu-biao.html">无线鼠标</a></p></li><li class ="li-hover"><h3><a target="_blank" href="/market/jia-ju-shi-pin.html">家居饰品</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/bai-jian.html">摆件</a> <a target="_blank" href="/market/chuang-yi-shi-pin.html">创意饰品</a> <a target="_blank" href="/market/nao-zhong.html">闹钟</a></p></li></ul> 
+        <div class="tags" id="tags">
+            <div class="tags-content">
+                <span class="tags-title">家居饰品 ：</span> 
+                <span  id="tmallSubCids"></span>
+            </div>
+         </div>
+    </div>
+    
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12435312612&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12435312612">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1omzgXdthXXag3yHX_115543.jpg_210x1000.jpg" width="210" alt="静香蜡烛无烟无味香熏蜡烛/铝壳蜡烛/茶蜡/14克蜡烛100"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥27.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：74.24
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>静香蜡烛无烟无味香熏蜡烛/铝壳蜡烛/茶蜡/14克蜡烛100</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12314352581&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12314352581">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1D3O0XehhXXaVhQ.._082918.jpg_210x1000.jpg" width="210" alt="油画 客厅装饰画沙发墙背景画无框画五联组合挂画壁画 百年好合"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥98.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：70.04
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>油画 客厅装饰画沙发墙背景画无框画五联组合挂画壁画 百年好合</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=3242992296&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="3242992296">
+                        <img src="http://img05.taobaocdn.com/bao/uploaded/i5/T1vv_JXiFoXXbKwo6a_092604.jpg_210x1000.jpg" width="210" alt="风水阁 开光五帝钱 六帝钱 葫芦挂件 古币铜钱 镇宅辟邪 化煞真品"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥2.69</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.71
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>风水阁 开光五帝钱 六帝钱 葫芦挂件 古币铜钱 镇宅辟邪 化煞真品</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12305993779&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12305993779">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1_KHhXhJfXXbuz9s._113400.jpg_210x1000.jpg" width="210" alt="静香 香薰蜡烛/14克/煮茶/茶蜡/装修去异味 煮咖啡酒店 白色50个"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥13.50</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.51
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>静香 香薰蜡烛/14克/煮茶/茶蜡/装修去异味 煮咖啡酒店 白色50个</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12911775861&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12911775861">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T1s1PaXfBpXXbtTV.2_042800.jpg_210x1000.jpg" width="210" alt="风水阁 开光独家化太岁秘法化太岁锦囊太岁符 2013蛇年本命年必备"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥70.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.17
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>风水阁 开光独家化太岁秘法化太岁锦囊太岁符 2013蛇年本命年必备</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=4108634966&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="4108634966">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T1A1.kXgRcXXc5Gi73_050448.jpg_210x1000.jpg" width="210" alt="风水阁 开光纯铜鸡工艺品 铜公鸡摆件防第三者促夫妻感情化蜈蚣煞"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥36.90</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.07
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>风水阁 开光纯铜鸡工艺品 铜公鸡摆件防第三者促夫妻感情化蜈蚣煞</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16041690722&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16041690722">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T12wj.XnVbXXa9Aaja_120118.jpg_210x1000.jpg" width="210" alt="静香 实木照片墙 相框墙 相片墙 相框组合 装饰墙  创意HK11-8"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥220.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.53
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>静香 实木照片墙 相框墙 相片墙 相框组合 装饰墙  创意HK11-8</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12541303724&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12541303724">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1uMyWXfBeXXbVZHs__105444.jpg_210x1000.jpg" width="210" alt="包邮 测量身高贴长颈鹿身高尺 卡通墙贴儿童房间 幼儿园教室贴画"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥28.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.33
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>包邮 测量身高贴长颈鹿身高尺 卡通墙贴儿童房间 幼儿园教室贴画</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19629260724&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19629260724">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1F766Xi4XXXXFW5g6_061856.jpg_210x1000.jpg" width="210" alt="手绘客厅有框画 欧式油画现代玄关装饰画卧室壁画餐厅挂画花卉画"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥228.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.95
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>手绘客厅有框画 欧式油画现代玄关装饰画卧室壁画餐厅挂画花卉画</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16882616890&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16882616890">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1MHz5XhVfXXb7Ds6b_093412.jpg_210x1000.jpg" width="210" alt="【莎芮】现代A系列道具书 假书仿真书 别墅会所简欧摄影装饰书"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥3.40</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.93
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>【莎芮】现代A系列道具书 假书仿真书 别墅会所简欧摄影装饰书</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=10896578235&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="10896578235">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1M._yXmtoXXXO5IwT_011203.jpg_210x1000.jpg" width="210" alt="创意结婚礼物 新婚庆娃娃婚房送礼品时尚家居饰品摆件树脂工艺品"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥188.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.67
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>创意结婚礼物 新婚庆娃娃婚房送礼品时尚家居饰品摆件树脂工艺品</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15247855715&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15247855715">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1egrSXchnXXburs38_100057.jpg_210x1000.jpg" width="210" alt="热销！百财如意白菜摆件旺财乔迁开业贺礼品招财玉白菜工艺品摆件"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥98.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.44
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>热销！百财如意白菜摆件旺财乔迁开业贺礼品招财玉白菜工艺品摆件</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=8444097863&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="8444097863">
+                        <img src="http://img07.taobaocdn.com/bao/uploaded/i7/T1Xu3jXX0eXXbxoAg3_050614.jpg_210x1000.jpg" width="210" alt="Yankee Candle扬基蜡烛 礼物 香薰 精油 车用 芳香夹 秋叶"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥98.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.44
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>Yankee Candle扬基蜡烛 礼物 香薰 精油 车用 芳香夹 秋叶</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=18889008871&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="18889008871">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1lVLEXchdXXar9_zb_125338.jpg_210x1000.jpg" width="210" alt="#独畅团#9.99包邮卧室客厅墙贴儿童房墙贴可移除墙贴 小孩身高贴"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥29.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.42
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>#独畅团#9.99包邮卧室客厅墙贴儿童房墙贴可移除墙贴 小孩身高贴</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15357786944&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15357786944">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1EDfuXk4cXXXRDgZ2_044244.jpg_210x1000.jpg" width="210" alt="小猪猪牌 13框实木照片墙 时尚创意相片墙相框组合墙送画芯 包邮"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥128.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.29
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>小猪猪牌 13框实木照片墙 时尚创意相片墙相框组合墙送画芯 包邮</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16032820277&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16032820277">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1DhUiXd0XXXcXMmg2_045227.jpg_210x1000.jpg" width="210" alt="Yankee Candle扬基蜡烛 美国进口 家居 创意礼物 香薰 海湾水流"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥528.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.27
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>Yankee Candle扬基蜡烛 美国进口 家居 创意礼物 香薰 海湾水流</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=4265187752&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="4265187752">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1inn5XaddXXXgJ2c1_040803.jpg_210x1000.jpg" width="210" alt="风水阁大师推荐 现代居室专用开光泰山石敢当 泰山石雕刻镇宅原石"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥125.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.09
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>风水阁大师推荐 现代居室专用开光泰山石敢当 泰山石雕刻镇宅原石</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=13050868366&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="13050868366">
+                        <img src="http://img05.taobaocdn.com/bao/uploaded/i5/T1RhZbXm4bXXcN8kA2_044721.jpg_210x1000.jpg" width="210" alt="高档对茶枕 朋友结婚礼物实用 创意婚庆礼品新婚贺礼摆件时尚浪漫"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥419.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.81
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>高档对茶枕 朋友结婚礼物实用 创意婚庆礼品新婚贺礼摆件时尚浪漫</h3>
+                </div>
+            </div>
+        
+</div>
+<div class="loading">正在加载</div>
+<div class="footer">
+	<div class="pagebox contet">
+    	©Copyright 2011-2012 买了网
+    </div>
+</div>
+<div id="gotop" style=" display:none;" class="gotop" style="opacity: 0;"><img width="55" height="55" src="/images/top.png"></div>
+<div class="toolbar" id="toolbar" >
+    <div class="side" data-action="side"><</div>
+    <div class="number" id="number">1</div>
+    <hr class="split" />
+    <div class="actions">
+   <div class="action" >
+        <span class="icon" data-action="top">
+            ↑
+        </span>
+        <span class="name data-action="top">返回顶部</span>
+    </div>
+    <div class="action">
+       <span class="icon" data-action="pre">
+        ←
+        </span>
+        <span class="name"   data-action="pre">后退</span>
+    </div>
+    <div class="action" >
+        <span class="icon" data-action="next">
+            →
+        </span>
+        <span class="name" data-action="next">前进</span>
+    </div>
+    </div>
+   <!-- -->
+</div>
+<script src="/scripts/base-0.1.js"></script>
+<script src="/scripts/common.js?v=20121202"></script>
+<script src="/scripts/md5.js"></script>
+<script src="/scripts/feed.js?v=20121202"></script>
+<script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21229350"></script>
+<script type="text/javascript">
+    feed();
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+</body>
+</html>
+

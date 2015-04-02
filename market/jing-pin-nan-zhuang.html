@@ -1,0 +1,427 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>精品男装 - 买了网</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script>
+        var secret = "d2b01e691c2659bafca6f63f598ce2d2",
+            message = "d2b01e691c2659bafca6f63f598ce2d2app_key21229350timestamp{$timestamp}d2b01e691c2659bafca6f63f598ce2d2",
+            page = 1,
+            size = 18,
+            selectedCid = 30;
+    </script>
+</head>
+<body>
+<div class="header">
+	<div class="pagebox">
+    	<div class="logo"><img src="/images/logo.jpg" width="147" height="60"></div>
+
+	    <ul class="nav">
+            <li><a href="/">热销</a></li> 
+            <li><a href="/market/shi-shang-nv-zhuang.html">发现</a></li>
+            <li><a href="/#sales">促销</a></li>
+            <li class="user"><a href="/#login">登陆</a> <a href="/#login">注册</a></li>
+   	    </ul>
+    </div>
+</div>
+<div class="mod-options">
+    <ul class="list" id="sort">
+        <li class="select" data-sort="selected">精选</li>
+        <li  data-sort="volume_desc">畅销</li>
+        <li data-sort="volume_asc">新品</li>
+        <li data-sort="price_asc">白菜价</li>
+    </ul>
+    <div class="links">
+    	<a href="javascript:void(0)" onclick="addFavor()">收藏本站</a> | <a href="javascript:void(0);" onclick="setHome(this,'http://www.buyed.cn');">设为主页</a>
+    </div>
+</div>
+
+<div id="Waterfall" class="waterfall"> 
+    <div class="item sidenav" id="sidenav">
+  	    <h2 class="title">商品分类</h2>
+        <ul class="items"><li><h3><a target="_blank" href="/market/shi-shang-nv-zhuang.html">时尚女装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/zhen-zhi-shan.html">毛针织衫</a> <a target="_blank" href="/market/mian-yi.html">棉衣/棉服</a> <a target="_blank" href="/market/chen-shan.html">衬衫</a> <a target="_blank" href="/market/ku-zhi.html">裤子</a></p></li><li><h3><a target="_blank" href="/market/jing-pin-nv-xie.html">精品女鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/xue-zhi.html">靴子</a> <a target="_blank" href="/market/fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/di-bang-xie.html">低帮鞋</a></p></li><li class ="li-hover"><h3><a target="_blank" href="/market/jing-pin-nan-zhuang.html">精品男装</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-chen-shan.html">衬衫</a> <a target="_blank" href="/market/nan-jia-ke.html">夹克</a> <a target="_blank" href="/market/nan-feng-yi.html">风衣</a> <a target="_blank" href="/market/nan-wei-yi.html">卫衣</a> <a target="_blank" href="/market/nan-yu-rong-fu.html">羽绒服</a> <a target="_blank" href="/market/nan-xi-fu.html">西服</a></p></li><li><h3><a target="_blank" href="/market/liu-xing-nan-xie.html">流行男鞋</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/nan-fan-bu-xie.html">帆布鞋</a> <a target="_blank" href="/market/nan-gao-bang-xie.html">高帮鞋</a> <a target="_blank" href="/market/nan-xue-zhi.html">靴子</a></p></li><li><h3><a target="_blank" href="/market/shou-ji.html">手机数码</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/shou-ji.html">手机</a> <a target="_blank" href="/market/mp3-mp4.html">MP3/MP4</a> <a target="_blank" href="/market/xiang-ji.html">数码相机</a> <a target="_blank" href="/market/dian-zhi-shu.html">电子书</a></p></li><li><h3><a target="_blank" href="/market/dian-nao-wai-she.html">电脑周边</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/jian-pan.html">键盘</a> <a target="_blank" href="/market/xian-shi-qi.html">显示器</a> <a target="_blank" href="/market/yin-xiang.html">音箱</a> <a target="_blank" href="/market/you-xian-shu-biao.html">有线鼠标</a> <a target="_blank" href="/market/wu-xian-shu-biao.html">无线鼠标</a></p></li><li><h3><a target="_blank" href="/market/jia-ju-shi-pin.html">家居饰品</a> <b class="icon-next"><!-- &gt;--> </b></h3><p><a target="_blank" href="/market/bai-jian.html">摆件</a> <a target="_blank" href="/market/chuang-yi-shi-pin.html">创意饰品</a> <a target="_blank" href="/market/nao-zhong.html">闹钟</a></p></li></ul> 
+        <div class="tags" id="tags">
+            <div class="tags-content">
+                <span class="tags-title">精品男装 ：</span> 
+                <span  id="tmallSubCids"></span>
+            </div>
+         </div>
+    </div>
+    
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=13649138998&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="13649138998">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1hB2TXihnXXc0dPk8_100858.jpg_210x1000.jpg" width="210" alt="拜耳 baaler 法式衬衫 经典小领 钮钉款 礼服式 白色 纯棉 LF-6"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥238.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：70.01
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>拜耳 baaler 法式衬衫 经典小领 钮钉款 礼服式 白色 纯棉 LF-6</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=14885640739&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="14885640739">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/739746924/T2w7SZXjdaXXXXXXXX_!!739746924.jpg_210x1000.jpg" width="210" alt="拜耳 baaler  男长袖 法式 白色衬衫 小方领 高棉 EX005"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥228.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：69.24
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>拜耳 baaler  男长袖 法式 白色衬衫 小方领 高棉 EX005</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17348603067&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17348603067">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1x2zNXXJoXXccp6I3_050534.jpg_210x1000.jpg" width="210" alt="拜耳 baaler 法式衬衫 大尖领  120支纯棉 瘦身版 白色 LJ-12"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥232.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.93
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>拜耳 baaler 法式衬衫 大尖领  120支纯棉 瘦身版 白色 LJ-12</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12970503513&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12970503513">
+                        <img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1jP6QXmFoXXbJZ7za_091725.jpg_210x1000.jpg" width="210" alt="保罗polo秋冬款男士长袖保暖衬衫 商务条纹加厚加绒加棉保暖衬衣"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥168.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.48
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>保罗polo秋冬款男士长袖保暖衬衫 商务条纹加厚加绒加棉保暖衬衣</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=14349429225&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="14349429225">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1Y5LSXeJmXXbLGfA9_103334.jpg_210x1000.jpg" width="210" alt="京平甜玉V25酒店厨师工作服长袖秋冬季厨师服装酒店饭店厨师服"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥38.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：68.06
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>京平甜玉V25酒店厨师工作服长袖秋冬季厨师服装酒店饭店厨师服</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12736452164&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12736452164">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/739746924/T2c14ZXeXdXXXXXXXX_!!739746924.jpg_210x1000.jpg" width="210" alt="拜耳 baaler 法式衬衫 白色 婚宴礼服 袖扣款 纯棉 瘦身版 LF-3"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥256.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：67.96
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>拜耳 baaler 法式衬衫 白色 婚宴礼服 袖扣款 纯棉 瘦身版 LF-3</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12413297998&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12413297998">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/739746924/T2mMiZXdXaXXXXXXXX_!!739746924.jpg_210x1000.jpg" width="210" alt="拜耳 baaler 婚宴礼服衬衫 小翼领 法式 140支纯棉 瘦身版 Y007"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥258.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：67.59
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>拜耳 baaler 婚宴礼服衬衫 小翼领 法式 140支纯棉 瘦身版 Y007</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15854745156&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15854745156">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1KI25XmBaXXafkQQ8_071354.jpg_210x1000.jpg" width="210" alt="巴豹秋款男士牛仔裤男裤中年直筒休闲牛仔长裤大码加肥加大裤子"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥318.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：67.11
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>巴豹秋款男士牛仔裤男裤中年直筒休闲牛仔长裤大码加肥加大裤子</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=15814814072&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="15814814072">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1d_HRXh4jXXasoIsV_020045.jpg_210x1000.jpg" width="210" alt="正品保罗polo男士长袖保暖衬衫 粉色新郎婚庆喜庆加厚加绒衬衣"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥168.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.95
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>正品保罗polo男士长袖保暖衬衫 粉色新郎婚庆喜庆加厚加绒衬衣</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17312667820&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17312667820">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1gIQcXnJbXXaN0C6a_122337.jpg_210x1000.jpg" width="210" alt="独家定制 英伦风高档男士秋冬款修身进口绵羊皮真皮西装皮衣外套"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥5776.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.68
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>独家定制 英伦风高档男士秋冬款修身进口绵羊皮真皮西装皮衣外套</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16395523308&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16395523308">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/739746924/T20OCEXm0bXXXXXXXX_!!739746924.jpg_210x1000.jpg" width="210" alt="拜耳 BAALER 尊品法式衬衫 商务精品 140高支 纯棉 瘦身版 SL262"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥358.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.63
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>拜耳 BAALER 尊品法式衬衫 商务精品 140高支 纯棉 瘦身版 SL262</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17358699505&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17358699505">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1HvzRXhXjXXcegkTb_124705.jpg_210x1000.jpg" width="210" alt="纯羊毛韩版男士高领羊毛衫 加厚高领毛衣纯色打底衫针织衫男 包邮"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥428.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.49
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>纯羊毛韩版男士高领羊毛衫 加厚高领毛衣纯色打底衫针织衫男 包邮</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=13578076487&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="13578076487">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1MFbPXbBkXXX.8kfa_092000.jpg_210x1000.jpg" width="210" alt="保罗 男士长袖保暖衬衫 加厚加绒加棉 长袖黑竖条纹包邮保暖衬衣"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥168.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：66.05
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>保罗 男士长袖保暖衬衫 加厚加绒加棉 长袖黑竖条纹包邮保暖衬衣</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=16325509430&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="16325509430">
+                        <img src="http://img04.taobaocdn.com/bao/uploaded/i4/T12xbVXhBlXXc8hcQ5_054933.jpg_210x1000.jpg" width="210" alt="雅伦格 2012冬装新品厚款男士白鸭绒双排扣修身羽绒服保暖外套"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥660.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.99
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>雅伦格 2012冬装新品厚款男士白鸭绒双排扣修身羽绒服保暖外套</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17905075073&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17905075073">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1xkT.XkBdXXctE7E__110219.jpg_210x1000.jpg" width="210" alt="金伟乐 保安服冬装 加厚保安制服 多功能大衣 棉衣 保安大衣"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥178.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.89
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>金伟乐 保安服冬装 加厚保安制服 多功能大衣 棉衣 保安大衣</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=19789148790&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="19789148790">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1vx_GXgxpXXXD27Pb_125004.jpg_210x1000.jpg" width="210" alt="2012新品 海宁真皮皮衣羽绒服 带帽 男士中长皮装外套Z-17"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥2660.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.86
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>2012新品 海宁真皮皮衣羽绒服 带帽 男士中长皮装外套Z-17</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=17508363364&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="17508363364">
+                        <img src="http://img03.taobaocdn.com/bao/uploaded/i3/T18u_VXg0fXXctdhnX_115359.jpg_210x1000.jpg" width="210" alt="月牙泉2012冬款男士加厚加绒保暖衬衫 撞色拼接 时尚休闲保暖衬衣"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥218.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.84
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>月牙泉2012冬款男士加厚加绒保暖衬衫 撞色拼接 时尚休闲保暖衬衣</h3>
+                </div>
+            </div>
+        
+            <div class="item">
+                <div class="pic">
+                    <a href="http://item.taobao.com/item.htm?id=12727435944&spm=2014.21229350.0.0&scm=1031.11116.21229350.0" target="_blank" alt="12727435944">
+                        <img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1Rrb9XctfXXawiOU8_100822.jpg_210x1000.jpg" width="210" alt="拜耳 baaler 立领衬衫 纯棉 长袖 法式衬衫 修身 E020"></a>
+                </div>
+                <div class="status">
+                    <span class="price">￥258.00</span>
+                    <div class="data" style=" font-size:12px; text-align:right;">
+                        评分：65.84
+                        
+                    </div>
+                </div>
+                <div class="comment">
+                    <h3>
+                        <a href="/">BUYED</a> <span class="light">喜欢</span>拜耳 baaler 立领衬衫 纯棉 长袖 法式衬衫 修身 E020</h3>
+                </div>
+            </div>
+        
+</div>
+<div class="loading">正在加载</div>
+<div class="footer">
+	<div class="pagebox contet">
+    	©Copyright 2011-2012 买了网
+    </div>
+</div>
+<div id="gotop" style=" display:none;" class="gotop" style="opacity: 0;"><img width="55" height="55" src="/images/top.png"></div>
+<div class="toolbar" id="toolbar" >
+    <div class="side" data-action="side"><</div>
+    <div class="number" id="number">1</div>
+    <hr class="split" />
+    <div class="actions">
+   <div class="action" >
+        <span class="icon" data-action="top">
+            ↑
+        </span>
+        <span class="name data-action="top">返回顶部</span>
+    </div>
+    <div class="action">
+       <span class="icon" data-action="pre">
+        ←
+        </span>
+        <span class="name"   data-action="pre">后退</span>
+    </div>
+    <div class="action" >
+        <span class="icon" data-action="next">
+            →
+        </span>
+        <span class="name" data-action="next">前进</span>
+    </div>
+    </div>
+   <!-- -->
+</div>
+<script src="/scripts/base-0.1.js"></script>
+<script src="/scripts/common.js?v=20121202"></script>
+<script src="/scripts/md5.js"></script>
+<script src="/scripts/feed.js?v=20121202"></script>
+<script src="http://a.tbcdn.cn/apps/top/x/sdk.js?appkey=21229350"></script>
+<script type="text/javascript">
+    feed();
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+</body>
+</html>
+

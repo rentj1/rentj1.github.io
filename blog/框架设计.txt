@@ -1,0 +1,74 @@
+var t = "abcdefg";
+
+//================
+t.substr(1,2);
+"bc"
+t.substring(1,2);
+"b"
+
+//================
+t.substr(1);
+"bcdefg"
+t.substring(1);
+"bcdefg"
+
+//================
+t.substr(-1);
+"g"
+t.substring(-1);
+"abcdefg"
+
+//================
+t.substr(2,1);
+"c"
+t.substring(2,1);
+"b"
+
+
+避免使用保留字，可能会和以后javascript版本冲突
+
+重点是API，实现后续可以优化，API后期变动会影响兼容性问题
+使用大家熟悉的API
+
+处理EMASCRIPT 5 兼容
+
+实现原则 标准优先，优先使用内置功能
+
+DOM 元素包装
+
+选择器
+
+约定规范
+模块模式
+
+注释
+
+
+常用功能(cookie,ajax)
+
+
+行情中心架构
+
+base.min.js 相当于框架。 
+
+function.min.js 是与行情中心需求相关的基于框架的公用组件
+
+单独页面有一个独立的JS比如首页就是index.min.js 代码写在局部作用域中
+
+使用SSI包含功能html代码，防止后期改动公共HTML，批量更改已使用页面
+
+master.html 里包含了layout和可以复用的模块代码
+样式大部分都是一样 
+css/base.css 包含了cssrest和基础样式
+css/core.css 项目公用模块样式
+
+http://www.tutorialspoint.com/javascript/array_foreach.htm
+
+
+
+控制逻辑C
+表现逻辑v
+数据逻辑m
+
+
+

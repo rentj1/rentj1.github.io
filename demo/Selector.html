@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script src="selector.js"></script>
+</head>
+
+<body>
+
+<p>test tag p1</p>
+<p>test tag p2</p>
+
+<div id="div">
+	
+    <div class="span">test:div.span</div>
+    
+</div>
+
+<ul class="ul">
+	<li class="li-test">1</li>
+    <li>2</li>
+    <li class="li-test">3</li>
+</ul>
+
+<script>
+
+document.body.onclick = function(){
+	
+	//console.log(document.body.getElementsByClassName("li-test"));
+
+	//tagName
+	console.log(dom.get("p"));
+	
+	//#id
+	console.log(dom.get("#div"));
+	
+	//.class
+	console.log(dom.get(".span", document.body));
+	
+	//tag.class
+	console.log(dom.get("div.span"));
+	
+	//#id .class
+	console.log(dom.get("#div .span"));
+
+	//.class .class
+	console.log(dom.get(".ul .li-test"));
+	
+};
+
+</script>
+
+</body>
+</html>

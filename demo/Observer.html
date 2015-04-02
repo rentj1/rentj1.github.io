@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>观察者模式的Javascript实现方式</title>
+</head>
+
+<body >
+
+<script>
+var global = window;
+
+(function(ns, base){
+	
+	//被观察的对象
+	function Observable(){
+		
+		this.observers = {};
+	}	
+	
+	Observable.prototype = {
+		
+		//subscribe
+		bind: function(name, observer){
+			var observers = this.observers[name] || ( this.observers[name] = [] );
+			var isbind = observer && observers.indexOf(observer) === -1;
+			
+			if(isbind){
+				observers.push(observer);
+			}
+
+		},
+		
+		//unsubscribe
+		unbind: function(name, observer){
+			var observers = this.observers[name],
+				index = observers && observers.indexOf(observer),
+				isunbind = (index !== undefined) && (index > -1);
+				
+			if (isunbind ){
+				observers.splice(index, 1);
+			}
+		},
+		
+		//publish
+		trigger: function (name, args){
+			var observers = this.observers[name];
+			if(!observers) return;
+			
+			for (var i=0; i<observers.length; i++) {
+				observers[i](args);
+			}
+		}
+	};
+	
+	Observable.fn = Observable.prototype;
+	ns.Observable = Observable;
+	
+}(global, undefined));
+
+//测试,Model和View解耦
+(function(){
+
+	//UserModel，继承Observable
+	function UserModel (id){
+		this.id = id;
+	}
+	
+	UserModel.prototype =  new Observable(); 
+	
+	UserModel.prototype.load = function(){
+		//ajax load
+		var mode = { name: "jser", id: this.id };
+		
+		//触发loaded事件
+		this.trigger("loaded", { target: this, data: mode } );
+	
+	}
+	
+	function UserView(){
+		this.render = function(data){
+			alert("username: "+ data.name);
+		}
+	}
+	
+	var user = new UserModel();
+	var view = new UserView();
+	
+	//添加观察者，当UserMode加载完成调用
+	user.bind("loaded", function(event){
+		view.render(event.data);
+	});
+	user.load();
+}());
+</script>
+</body>
+</html>

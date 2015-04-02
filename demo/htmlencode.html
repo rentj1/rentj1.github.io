@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML编码/解码</title>
+</head>
+
+<body>
+<form>
+<textarea name="code" style="width:670px; height:400px">
+</textarea>
+<br />
+<br />
+<input type="button" onclick="htmlEncode(this.form)" value="Encode" />
+<input type="button" onclick="htmlDecode(this.form)" value="Decode" />
+<input type="reset" value="Clear" />
+<br />
+<br />
+
+<textarea name="result" style="width:670px; height:400px">
+
+</textarea>
+</form>
+<script type="text/javascript">
+
+function htmlEncode (form){
+	
+	var str =form.code.value;
+	var div = document.createElement("div");
+	var text = document.createTextNode(str);
+	div.appendChild(text);
+	form.result.value = div.innerHTML;
+}
+
+function htmlDecode (form){
+	var str =form.code.value;
+	var div = document.createElement("div");
+	div.innerHTML = str;
+	form.result.value =div.innerText || div.textContent ;
+}
+
+//cnblogs.com/ghd258/archive/2009/10/18/1274429.html
+</script>
+</body>
+</html>

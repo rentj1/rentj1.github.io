@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>canvas绘制 二次贝塞尔曲线</title>
+<style>
+*{ margin:0; padding:0}
+#arc{float:left;  border:1px solid #ccc;}
+.info{ margin-left:5px; float:left; }
+</style>
+</head>
+
+<body>
+  <canvas id="arc" width="500" height="500"> </canvas>
+  <div class="info">
+  	<p id="tips"><strong>移动键盘方向键设置点</strong></p>
+    <p><strong>起始点:</strong> <span id="p1"></span></p>
+	<p><strong>控制点:</strong> <span id="p2"></span></p>
+    <p><strong>终止点:</strong> <span id="p3"></span></p>
+    <p style="font-size:12px; margin-top:10px;">参考:<a href="http://www.amazon.cn/gp/product/B004W4NF20/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B004W4NF20&linkCode=as2&tag=buyedcn-23">HTML5与CSS3权威指南</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B004W4NF20" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</p>
+  </div>
+<script>
+
+Object.prototype.clone = function(){
+	var obj = {};
+	for(var property in this){
+		if(obj[property]){	
+			continue;
+		}	
+		
+		obj[property] =  this[property];
+	}
+	return obj;
+};
+
+
+
+(function(){
+	//http://www.cnblogs.com/loujady/archive/2011/12/07/2278898.html	  
+	//http://bbs.9ria.com/thread-131296-1-1.html
+	var arc =document.getElementById("arc")
+	var context = arc.getContext("2d");
+	context.lineWidth = 2;   
+	context.lineCap = "round";
+	
+	var model = {
+		x:250,
+		
+		y:250,
+		
+		r:5,
+		
+		strokeStyle: "#000000",
+		
+		start:0,
+		
+		end: 2*Math.PI,
+		
+	};
+	
+	var clearRect = {
+		
+		x:0,
+		
+		y:0,
+		
+		width: arc.width,
+		
+		height:arc.height
+	};
+	
+	var p1 = {x:0, y:0, id:"p1"};
+	var p2 = {x:250, y:350, id:"p2"};
+	var p3 = {x: 500 - model.r*2 + context.lineWidth*2, y: model.r + context.lineWidth, id: "p3"};
+	var points = [p1, p2, p3];
+	var fixed = [];
+	var t = 0;
+	
+	function drawArc(fixedModel){
+		
+		var arc1 = fixedModel ||  model;
+		context.beginPath();
+		context.arc(arc1.x, arc1.y, arc1.r, arc1.start, arc1.end);     
+		context.strokeStyle = arc1.strokeStyle; // line color    
+		context.stroke(); 
+		context.closePath();
+	}
+	
+	function clear(rect){	
+		context.clearRect(rect.x, rect.y, rect.width, rect.height);	
+	}
+	
+	window.onkeydown = function(e){
+		
+		 var key = e.keyCode;
+		 
+		 setClearRect();
+		
+		//计算坐标
+		 switch(key){
+			 
+			 case 37:
+			  
+			  model.x = model.x - 2;
+			  
+			  break;
+			  
+			 case 39:
+			  model.x = model.x + 2;
+			  break;
+			 
+			 case 40:
+			  model.y = model.y + 2;
+			  break;
+			 
+			 case 38:
+			 
+			  model.y = model.y - 2;
+			  break; 
+			  
+			 case 13:
+			 
+				if( points.length === 0) {
+					
+					start();
+				} else {
+					setPonit();
+				}
+				return;		 
+		 } 
+		 
+		 ani(model);
+		 
+		 document.getElementById(points[0].id).innerHTML = "x:" + model.x +" y:" + model.y;
+	}
+	function drawFixed(){
+	
+		 var model = null;
+		 for(var i = 0; i < fixed.length; i++){
+			model = fixed[i];
+			model.strokeStyle = "red";
+		 	clear({	x: model.x - model.r - context.lineWidth,
+				  	y: model.y - model.r - context.lineWidth,
+					width: model.r*2 + context.lineWidth*2,
+					height: model.r*2 + context.lineWidth*2
+				  });
+			
+			drawArc(model);
+		 }
+	}
+	
+	function setPonit() {
+		
+		var p = points.shift();
+		p.x = model.x;
+		p.y = model.y;
+
+		fixed.push(model.clone());
+		drawFixed();
+		
+		document.getElementById(p.id).innerHTML = "x:" + p.x + " y:" + p.y;
+
+		if(points.length === 0) {
+			document.getElementById("tips").innerHTML = "设置完成按回车键开始";
+		}
+	}
+	
+	function setClearRect(){
+		
+		clearRect = {
+			
+			x: model.x - model.r - context.lineWidth,
+			
+			y: model.y - model.r - context.lineWidth,
+			
+			width: model.r*2 + context.lineWidth*2,
+			
+			height: model.r*2 + context.lineWidth*2
+		};
+	}
+	
+	function reset(){
+		
+		p1 = fixed[0];
+		p2 = fixed[1];
+		p3 = fixed[2];
+		t = 0;
+	}
+	
+	function start(){
+		
+		var timer = setInterval(function(){
+										 
+				var x,y;	
+				
+				setClearRect();	
+				
+				//二次贝塞尔曲线公式
+				t +=0.01;
+				
+				x = Math.pow((1-t), 2) * p1.x + 2 * t * (1-t) * p2.x + Math.pow(t, 2) * p3.x;
+				y = Math.pow((1-t), 2) * p1.y + 2 * t * (1-t) * p2.y + Math.pow(t, 2) * p3.y;
+				
+				if( t >= 1){
+					clearInterval(timer);
+					reset();
+				}
+				
+				model.x = x;
+				model.y = y;
+				drawPath();
+				
+				
+
+		
+		},15);
+	
+	}
+
+
+	
+	function drawPath(){
+		
+		//context.beginPath();
+		/*
+		context.arc(model.x, model.y,2, model.start, model.end);     
+		context.fillStyle = model.strokeStyle; // line color    
+		context.fill(); 
+		*/
+		if(t==0.01)
+		{
+			context.moveTo(model.x+0.5,model.y+0.5)
+		}
+		context.lineJoin = "round"
+		context.lineTo(model.x+0.5, model.y+0.5)
+		context.stroke();
+		//context.closePath();
+	}
+	
+	
+	function ani(){
+		
+		//清空画布
+		clear(clearRect);
+		
+		//绘制移动圆点
+		drawArc();
+		
+		
+		//绘制固定的圆点
+		drawFixed();
+	}
+	
+	drawArc();
+}());
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>淘宝活动广告滑动切换 JavaScript效果</title>
+<script src="../scripts/base-0.1.js"></script>
+<style>
+
+/*reset*/
+body, ul, li, p, h2, h3,dl,dt,dd{ margin:0; padding:0;}
+h2, h3{ font-weight:normal; font-size:100%}
+ul{ list-style:none;}
+/*base*/
+a{ cursor:pointer; text-decoration:none}
+a img{ border:none; }
+a:hover{ color:#f00}
+img{ vertical-align:bottom;}
+body{ background-color:#eee; font-size:12px; color:#666666 }
+.pagebox{ width:960px; margin:0 auto 10px;  z-index:0 }
+.fn-left{ float:left}
+.fn-right{ float:right}
+.icon-like{ background:url(images/icon-like.png) no-repeat 0 0;}
+.icon-talk{ background:url(images/icon-talk.png) no-repeat 0 0;}
+.icon-like,
+.icon-talk{ width:18px; height:18px; display:inline-block; vertical-align:middle;  margin-right:6px;}
+
+/*mod-slide*/
+.mod-slide{ overflow:hidden; height: 488px; width:715px; position:relative;}
+.mod-slide .contet{ position:absolute; overflow:hidden }
+.mod-slide .slide-item{width:715px; float:left;}
+.mod-slide .products{ border-bottom:1px solid #ccc; overflow: hidden; zoom:1;  background-color:#fff; font-family:微软雅黑; line-height:1.2; }
+.mod-slide .products .pic{ height: 202px; overflow:hidden;  text-align:center; }
+.mod-slide .products li{ float:left; border-left:1px solid #ccc; margin-left:-1px; width:238px; position:relative; }
+.mod-slide .products .title{ color:#000; font-size:14px; display:block; text-align:left;  margin: 8px 5px 2px 10px;}
+.mod-slide .products .p0{  color:#000; font-size:12px}
+.mod-slide .products .p1{color:#a80606; font-size:14px }
+.mod-slide .products .price{ margin: 1px 5px 5px 10px;}
+.mod-slide .products .summary{ background-color:rgba(255, 255, 255, 0.7); position:absolute; top:65px; left:0; }
+
+.mod-slide .options{ position:absolute;/* pointer-events: none;*/  top:448px; left:0; height: 30px; padding:5px;  width:100%; z-index: 10; text-align: center; font-size: 16px; line-height: 30px;}
+.mod-slide .options li{ background-color:#716564;  border-radius:15px; color:#FFF; cursor:pointer; float:left; height:30px;  margin-left:10px;  position:relative; width:30px;}
+.mod-slide .options .select{ background-color:#B91919}
+.mod-slide .mask{  background-color: #000000; /*pointer-events: none;*/  top: 448px; height: 40px; left: 0; opacity: 0.3;  filter: alpha(opacity=30); position: absolute;  width: 780px;  z-index: 0; }
+
+.mod-bottom{ text-align:center; margin:10px auto;}
+</style>
+</head>
+
+<body>
+<div class="mod-slide">
+  <div class="contet" id="slide-content">
+    <div class="slide-item">
+      <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fgap.tmall.com%2F"><img src="http://www.baicaijia.com/website/img/banner/20121004/2.jpg" width="715"></a></div>
+      <ul class="products">
+        <li>
+          <div class="pic"> <a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fspm%3Da1z10.3.17.20.8364b2%26id%3D19998016456%26"><img src="http://img04.taobaocdn.com/bao/uploaded/i8/T1FCTOXadhXXa9QMs8_070516.jpg_460x460.jpg" height="208"></a></div>
+          <div class="summary"> <span class="title">宽松款圆下摆条纹长袖毛衣 </span>
+            <div class="price"> <span class="p1">￥179.00</span> <del class="p0">原价￥219</del> </div>
+          </div>
+        </li>
+        <li>
+            <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fspm%3Da1z10.3.17.8.c95b8%26id%3D16010306741%26"><img src="http://img01.taobaocdn.com/bao/uploaded/i5/T1L7LPXgRgXXaS6ecW_023222.jpg_460x460.jpg" height="208"></a></div>
+            <div class="summary"> <span class="title">超柔软工装羊毛混纺衫</span>
+              <div class="price"> <span class="p1">￥199.00</span> <del class="p0">原价￥219</del> </div>
+            </div>
+        </li>
+        <li>
+          <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fspm%3Da1z10.3.17.17.c95b8%26id%3D19867832327%26"><img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1_kDKXh4rXXb2KJg9_073037.jpg_460x460.jpg" height="208"></a></div>
+          <div class="summary"> <span class="title">立体V领后回缝糖果色宽条纹毛衣</span>
+            <div class="price"> <span class="p1">￥179</span> <del class="p0">原价￥219</del> </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="slide-item">
+      <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fmgbk.tmall.com%2F"><img src="http://www.baicaijia.com/website/img/banner/20121004/5.jpg" width="715"></a></div>
+      <ul class="products">
+        <li>
+          <div class="pic"><a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGKas1PIKp0U37pZuBotzOTNEAdXsHpjkzBn4tuEzOfuGAQjOEPCqm3f7hiHMPiDhozFwc6uJyvvDJwKWZ7yP3IVcKQNcdAPgJREN2jWccNlz2nzuPmXHvje5r503xk%2BVuZhp%2F4YtRHpJfEXC07%2BQQXh9aazbpVxydf5M8qLFXLK6UAyS0tTrwqsDFxNlOMqZry4bc7PUOTadOFn%2BpIUq9qJahWBKAqhz3e53gL%2F1USGwbSfxBnSfUp33is%2BGNPH6ts%3D&pid=mm_10844584_0_0"><img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1Y9TMXnXjXXb1upjX.jpg_670x670.jpg" height="208"></a></div>
+          <div class="summary"> <span class="title">美即净白保湿面膜组合<br />（12片面膜+2对眼膜</span>
+            <div class="price"> <span class="p1">￥69.00</span> <del class="p0">原价￥132.00</del> </div>
+          </div>
+        </li>
+        <li>
+            <div class="pic"><a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGKas1PIKp0U37pZuBotzOTNEAk6Jjr2ghC7s4qFHh41jVuCrE1gByzYVHSNaILyoOkYmjY5pD60vfWsOC9WQTGVBTHbt5m70RuqSGyB1XRQKzQEDCyEgwf7QagDowBddqqNYhfLTM7KI%2FqZAMaZCWpKuOdWvNEOFCuRsuxhG9u1SgqdXxfdKefEHspNE700nRUNL8%2FgWutaUO8rCp4G5b33OGoURjDFED3Gsj7G9psTJYO76EjxjzilwBj1yxnOzms%3D&pid=mm_10844584_0_0"><img src="http://img01.taobaocdn.com/bao/uploaded/i2/T1a.nNXaXaXXb1upjX.jpg_670x670.jpg" height="208"></a></div>
+            <div class="summary"> <span class="title">美即温泉保湿嫩白面膜组合<br />（10片面膜）</span>
+              <div class="price"> <span class="p1">￥79.00</span> <del class="p0">原价￥150.00</del> </div>
+            </div>
+        </li>
+        <li>
+          <div class="pic"><a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGKas1PIKp0U37pZuBotzOTNF%2FutgWZpguAy6mnbCqnxrPODGxZEM2bBSrIJSvq3ehZJ%2BSCmvDe9Rn53sr5uwqImhSS5MzkCjJXncc5%2FUkN3%2Fde8Ja0gCDZgXmRcDYIogpbvZd33reamFq3imSfiRULXyjPD%2Fy8RGSzKab40j1s4RK3YcMPJvqAG6muA1LlhZ19vNqNn1TwnknxIkq%2Fy1dTvS%2FWb06rF0xYV8FbqsL5SOJ3f%2B1LVkIC0tyMEqQUZwJo%3D&pid=mm_10844584_0_0"><img src="http://img01.taobaocdn.com/bao/uploaded/i4/T10DnIXXRrXXb1upjX.jpg_670x670.jpg" height="208"></a></div>
+          <div class="summary"> <span class="title">美即美白补水面膜组合<br />（16片面膜+2对眼膜）</span>
+            <div class="price"> <span class="p1">￥89.00</span> <del class="p0">原价￥172.00</del> </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="slide-item">
+      <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fnongge.tmall.com%2F"><img src="http://www.baicaijia.com/website/img/banner/20121004/4.jpg" width="715"></a></div>
+      <ul class="products">
+        <li>
+          <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fspm%3Da1z10.1.3.3.136431%26id%3D18797240416%26"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1deOgXXpoXXXgqoET_013331.jpg_310x310.jpg"></a></div>
+          <div class="summary"> <span class="title"> 美国大杏仁200gx3 包邮</span>
+            <div class="price"> <span class="p1">￥38.70</span> <del class="p0">原价￥73.40</del> </div>
+          </div>
+        </li>
+        <li>
+            <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fspm%3Da1z10.1.3.4.975995%26id%3D2222596973"><img src="http://img04.taobaocdn.com/bao/uploaded/i4/T1Kb8DXaNlXXbkDXIZ_030918.jpg_310x310.jpg"></a></div>
+            <div class="summary"> <span class="title">碧根果236gx3 包邮 </span>
+              <div class="price"> <span class="p1">￥62.88</span> <del class="p0">原价￥79.90</del> </div>
+            </div>
+        </li>
+        <li>
+          <div class="pic"><a href="http://s.click.taobao.com/t_9?p=mm_10844584_0_0&l=http%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fspm%3Da1z10.1.3.5.c34af%26id%3D2224282059%26"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1X1dTXj8mXXbBM4Da_091343.jpg_310x310.jpg"></a></div>
+          <div class="summary"> <span class="title">夏威夷果200gx4 包邮 送开果器 </span>
+            <div class="price"> <span class="p1">￥59.91</span> <del class="p0">原价￥65.50</del> </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+  <ul class="options" id="slide-options">
+    <li class="select">1</li>
+    <li>2</li>
+     <li>3</li>
+  </ul>
+  <div class="mask"></div>
+</div>
+
+<script>
+
+(function(){
+	//rentj1@163.com	  
+	var left = 0;
+	var slide = document.getElementById("slide-content");
+	var options = document.getElementById("slide-options").getElementsByTagName("li");
+	var width = 715;
+	var active = 0;
+	var length = options.length;
+	slide.style.width = (width * options.length)+ "px";
+	
+	//绑定事件
+	var onchange = function(index){
+		//动画代码
+	
+		(index === undefined) ? left -= width : left = -(index * width);
+		if(Math.abs(left) > (options.length-1)* width){
+			left = 0;	
+		}
+
+		effect.animate(slide, { left: left }, 300, "easeIn",function(){
+
+			options[active].className = "";												 
+			active = Math.abs(left/width);
+			options[active].className = "select";
+																	
+		});
+	}
+	
+	
+	
+	var timer = setInterval(onchange ,3000);
+	
+	for(var i=0; i<length; i++) {
+		
+		(function(i){
+				  
+			options[i].onmouseover = function(){
+				//alert(i)
+				clearInterval(timer);
+				onchange(i);
+			};
+			
+			options[i].onmouseleave = function(){
+				timer = setInterval(onchange ,3000);
+				
+			};
+		
+		})(i);
+	}
+	
+}());
+</script>
+<div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</body>
+</html>

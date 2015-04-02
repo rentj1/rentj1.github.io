@@ -1,0 +1,37 @@
+chrme 获取 常去网站
+ntp.setMostVisitedPages([{"direction":"ltr","title":"Google","url":"http://www.google.com.hk/"},{"direction":"ltr","title":"\u6211\u7684\u9996\u9875 \u65B0\u6D6A\u5FAE\u535A-\u968F\u65F6\u968F\u5730","url":"http://t.sina.com/"},{"direction":"ltr","title":"rentj - \u535A\u5BA2\u56ED","url":"http://www.cnblogs.com/rentj1"},{"direction":"ltr","title":"\u5DE5\u4F5C\u65E5\u5FD7\u7CFB\u7EDF","url":"http://172.16.88.153/"},{"direction":"ltr","title":"\u884C\u60C5\u4E2D\u5FC3\uFF1A\u56FD\u5185\u6700\u5FEB\u6377\u6700\u5168\u9762\u7684\u80A1\u7968\u3001\u57FA\u91D1\u3001\u671F\u8D27\u3001\u5916\u6C47\u3001\u9EC4\u91D1\u3001\u503A\u5238\u884C\u60C5\u7CFB\u7EDF_\u4E1C\u65B9\u8D22\u5BCC\u7F51","url":"http://quote.eastmoney.com/center/"},{"direction":"ltr","title":"\u4EAC\u4E1C\u7F51\u4E0A\u5546\u57CE-\u7EFC\u5408\u7F51\u8D2D\u9996\u9009\uFF0C\u6B63\u54C1\u884C\u8D27\uFF0C\u673A\u6253\u53D1\u7968\uFF0C\u552E\u540E\u4E0A\u95E8\u53D6\u4EF6\uFF0C\u7701\u94B1\u53C8\u653E\u5FC3","url":"http://www.360buy.com/"},{"direction":"ltr","title":"\u535A\u5BA2\u56ED - \u7A0B\u5E8F\u5458\u7684\u7F51\u4E0A\u5BB6\u56ED","url":"http://www.cnblogs.com/"},{"direction":"ltr","title":"\u8C46\u74E3","url":"http://douban.com/"},{"direction":"ltr","title":"\u817E\u8BAF\u9996\u9875","url":"http://www.qq.com/"},{"direction":"ltr","title":"\u4E1C\u65B9\u8D22\u5BCC\u7F51\uFF1A\u4E2D\u56FD\u8BBF\u95EE\u91CF\u6700\u5927\u5F71\u54CD\u529B\u6700\u5927\u7684\u4E92\u8054\u7F51\u8D22\u7ECF\u5A92\u4F53 _ \u80A1\u7968 _ \u884C\u60C5 _ \u8D22\u7ECF _ \u8BC1\u5238 _ \u91D1\u878D _ \u57FA\u91D1 _ \u535A\u5BA2 _ \u8D22\u8FF7","url":"http://www.eastmoney.com/"},{"direction":"ltr","title":"\u6DD8\u5B9D\u7F51 - \u6DD8\uFF01\u6211\u559C\u6B22","url":"http://www.taobao.com/"},{"direction":"ltr","title":"\u9996\u9875 - \u77E5\u4E4E","url":"http://www.zhihu.com/"},{"direction":"ltr","title":"\u884C\u60C5\u4E2D\u5FC3\uFF1A\u56FD\u5185\u6700\u5FEB\u6377\u6700\u5168\u9762\u7684\u80A1\u7968\u3001\u57FA\u91D1\u3001\u671F\u8D27\u3001\u5916\u6C47\u3001\u9EC4\u91D1\u3001\u503A\u5238\u884C\u60C5\u7CFB\u7EDF_\u4E1C\u65B9\u8D22\u5BCC\u7F51","url":"http://hqtest.eastmoney.com/center/list.html"},{"direction":"ltr","title":"\u9C9C\u679C\u7F51 - \u6211\u7684\u8BA2\u9605 - (4076)","url":"http://xianguo.com/reader#PageMgr.goFolder(3)"},{"direction":"ltr","title":"GitHub","url":"http://www.github.com/"},{"direction":"ltr","title":"\u98D8\u82B1\u7535\u5F71\u7F51_\u98D8\u82B1\u8FC5\u96F7\u7535\u5F71\u4E0B\u8F7D\u7F51_\u6700\u65B0\u7535\u5F71_\u8FC5\u96F7\u514D\u8D39\u7535\u5F71\u4E0B\u8F7D","url":"http://www.piaohua.com/"}],true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+ chrome.send('getFaviconDominantColor', [faviconUrl, this.id]);
+
+color-stripe
+
+http://stackoverflow.com/questions/2394890/css-javascript-hacking-detect-visited-styling-on-a-link-without-checking-it
+http://stackoverflow.com/questions/10067180/get-users-most-visited-sites-in-ie9-with-javascript
+
+KMean PNG
+
+http://www.cnblogs.com/leoo2sk/archive/2010/09/20/k-means.html
+
+http://www.cnblogs.com/SmartBizSoft/archive/2009/02/02/1382370.html
+
+ CalculateKMeanColorOfPNG 
+K平均算法
+http://bbs.et8.net/bbs/archive/index.php/t-1029991.html
+
+http://src.chromium.org/svn/trunk/src/ui/gfx/color_analysis.h
+
+Google Chrome: How does Chrome pick the color for the stripes on the "Most visited" page thumbnails?
+
+http://www.quora.com/Google-Chrome/How-does-Chrome-pick-the-color-for-the-stripes-on-the-Most-visited-page-thumbnails

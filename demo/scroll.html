@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+<meta charset="utf-8" />
+<title>通用无缝连续滚动JS(by rentj1@163.com;)</title>
+<style>
+body{ font-size:12px;}
+#scroll{width:670px; overflow:hidden; margin:80px auto auto;}
+.referer{ margin-top:50px; line-height:25px;}
+</style>
+</head>
+ 
+<body>
+<div id="scroll">
+<a href="http://www.amazon.cn/gp/product/B004OR2EOU/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B004OR2EOU&linkCode=as2&tag=buyedcn-23">Canon 佳能  IXUS 115 HS数码相机（橙）</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B004OR2EOU" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<font color="#f00">￥1,018.00</font>
+&nbsp;
+<a href="http://www.amazon.cn/gp/product/B0085T63HC/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0085T63HC&linkCode=as2&tag=buyedcn-23">Nikon 尼康 COOLPIX S30 便携数码相机(白色)</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B0085T63HC" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<font color="#f00">￥498.00</font>
+&nbsp;
+
+<a href="http://www.amazon.cn/gp/product/B004QEZ6H8/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B004QEZ6H8&linkCode=as2&tag=buyedcn-23">Canon 佳能 EOS 600D 数码单反套机(EFs 18-55mm/f3.5-5.6ISII镜头)</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B004QEZ6H8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<font color="#f00">￥4,388.00</font>
+&nbsp;
+
+<a href="http://www.amazon.cn/gp/product/B0085T68DG/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0085T68DG&linkCode=as2&tag=buyedcn-23">Nikon 尼康 D3200(VR18-55 KIT)单反数码相机(黑色)</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B0085T68DG" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<font color="#f00"> ￥ 3,888.00</font>
+&nbsp;
+</div>
+
+<script>
+     
+(function(ns){  
+	 
+    //Class Scroll{ 
+         
+        /**
+        * 构造函数
+        * email: rentj1@163.com;
+        * @param {HTMLElement} 滚动内容的容器
+        * @return {Undefined}
+        */
+        function Scroll(element){
+             
+            var content = document.createElement("div");
+            var container = document.createElement("div");
+            var _this =this;
+            var cssText = "position: absolute; visibility:hidden; left:0; white-space:nowrap;";
+            this.element = element; 
+            this.contentWidth = 0;
+            this.stop = false;
+             
+            content.innerHTML = element.innerHTML;
+          
+            //获取元素真实宽度
+            content.style.cssText = cssText;
+            element.appendChild(content);
+            this.contentWidth = (getComputedStyle && parseFloat(getComputedStyle(content,null).width)) || content.offsetWidth;
+            content.style.cssText= "float:left;";
+            container.style.cssText = "width: " + ((this.contentWidth) * 2) + "px; overflow:hidden";
+            container.appendChild(content);
+            container.appendChild(content.cloneNode(true));
+            element.innerHTML = "";
+            element.appendChild(container);
+             
+            container.onmouseover = function(e){
+                clearInterval(_this.timer);
+                 
+            };
+             
+            container.onmouseout = function(e){
+                _this.timer = setInterval(function(){ 
+                    _this.run();
+                },20);          
+ 
+                 
+            };
+            _this.timer = setInterval(function(){ 
+                _this.run();
+            }, 20);
+        }
+         
+        Scroll.prototype = {
+             
+            run: function(){
+                 
+                var _this = this;
+                var element = _this.element;
+                 
+                element.scrollLeft = element.scrollLeft + 2;
+                 
+                if(element.scrollLeft >=  this.contentWidth ) {
+                        element.scrollLeft = 0;
+                }
+            }
+        };
+    //}
+ 
+    ns.Scroll = Scroll; 
+ 
+//参考：<br />
+//http://www.ilovejs.net/archives/108
+}(window));
+var elem = document.getElementById("scroll");
+var sc = new Scroll(elem);
+ 
+</script>
+
+
+<div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</body>
+</html>

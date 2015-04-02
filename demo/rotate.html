@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>微薄中的图片放大/缩小/旋转功能 下载demo</title>
+<style>
+/*rentj1@163.com*/
+ul,li,h3,h1,h4,p{ margin:0; padding:0; list-style:none; font-weight:normal;}
+body{ font-size:12px; color:#333;}
+a{ text-decoration:none; color:#6191D4;}
+a:hover{ text-decoration:underline; color:#f00}
+.current{  color:#f00}
+img{ vertical-align:bottom}
+
+.list-item{ padding:10px 5px 5px 5px; width:640px; border-top:1px solid #efefef; overflow:hidden}
+.list-item .logo{ float:left; padding-top:5px; }
+.list-item .content{ /*margin-left:160px;*/ }
+.list-item .textarea{ padding:5px 0; font-size:14px; }
+.list-item .textarea h4{ margin-bottom:5px; }
+
+.pic{ overflow:hidden; min-height:60px;  background:url(http://xoyozo.me/tool/loading/images/loading23.gif) no-repeat left center; }
+.pic img{  padding:1px; border:1px solid #ccc; }
+
+.pic-big{ display:none; background-color:#fbfbfb; float:left; border:1px solid #E1E4E5;  padding: 15px 20px 13px; }
+.pic-big .title{ line-height:20px; }
+.pic-big .title .retract,
+.pic-big .title .trun-left,
+.pic-big .title .trun-right{ background:url("http://img.t.sinajs.cn/t4/style/images/common/ico.png?id=1347441496757") no-repeat 0 -1977px transparent; padding-left:12px;}
+.pic-big .title .trun-left{ background-position: 0 -937px; }
+.pic-big .title .trun-right{  background-position: 0 -966px; }
+
+.pic-small { min-width:60px; float:left; text-align:center; background-color:#ccc;  cursor: url("http://img.t.sinajs.cn/t4/style/images/common/big.cur"),auto;  }
+.pic-big img,
+.pic-big canvas{ cursor: url("http://img.t.sinajs.cn/t4/style/images/common/small.cur"), auto; }
+</style>
+</head>
+
+<body>
+<!-- rentj1@163.com -->
+<div class="list-item">
+    <div class="content">
+	<div class="textarea">
+
+        <p><a href="http://j.union.ijinshan.com/jump.php?u_key=81216" target="_blank">PPTV行业首将推iPad、iPhone直播回放功能</a></p>
+    </div>
+    <div class="pic" id="pic">
+        <div class="pic-small" data-action="bigImage">
+            <img src="http://ww2.sinaimg.cn/thumbnail/7cae8267gw1dxvrytqvagj.jpg" data-action="bigImage" />
+        </div>
+        <div class="pic-big">
+            
+        </div>
+    </div>
+    </div>
+</div>
+ 
+<script>
+//rentj1@163.com
+var dom = {
+	
+	get: function(id){
+		return document.getElementById(id);
+	}
+
+}
+
+function picHandle(e){
+	var e = e || window.event,
+	
+		target = e.target || e.srcElement,
+	
+		self = this,
+		
+		settings = {
+			width: 420,
+			"pic-small": self.children[0],
+			"pic-big": self.children[1]
+		},
+		
+
+		control = {
+		
+			//查看大图
+			bigImage: function(){
+				if( !self.rid ){
+					this.create();
+					return;
+				}
+				settings["pic-small"].style.display = "none";
+				settings["pic-big"].style.display = "block";
+			},
+			
+			getBigImgSrc: function(){
+				return (target.tagName !== "IMG" ? target.children[0] : target).src.replace("/thumbnail/", "/bmiddle/");
+			},
+			
+			create: function(callback){
+				var image = document.createElement("img");
+				var src = this.getBigImgSrc();
+				settings["pic-small"].style.display = "none";
+				settings["pic-big"].style.display = "none"
+				image.onload = function(){
+					if(self.rid )return; 
+					
+					var width = this.width;
+					if(width > settings.width){
+						width = settings.width;
+					}
+					self.rid = +(new Date());
+					settings["pic-big"].innerHTML = '<div class="title">'+ 
+													'<a href="javascript: void(0)" data-action="smallImage" class="retract">收起</a> ' +
+													'<a href="javascript: void(0)" data-action="trunLeft" class="trun-left">左转</a> ' +
+													'<a href="javascript: void(0)" data-action="trunRight"  class="trun-right">右转</a>' +
+												 '</div>'+
+												 '<a style="display:block"><img data-action="smallImage" src="' + src + '" width="' + width + '" id="img_'+ self.rid +'" data-rotate="0"></a>';
+
+					settings["pic-big"].style.display = "block";
+				};
+				image.src = src;
+				
+			},
+			
+			//查看小图
+			smallImage: function(){
+				settings["pic-small"].style.display = "block";
+				settings["pic-big"].style.display = "none";
+			},
+			
+			//获取当前旋转值
+			getRotate: function() {
+				var image = dom.get("img_" + self.rid);
+				return Number(image.getAttribute("data-rotate")) || 0;			
+			},
+			
+			trunRight: function(){
+				var r = this.getRotate();
+				r++
+				if(r>3) r = 0;
+				this.rotate(r);			
+			},
+			
+			trunLeft: function(){
+				var r = this.getRotate();
+				r--;
+				if(r<0) r = 3;
+				this.rotate(r);
+			},
+	
+			rotate: document.body.filters ? 
+				
+				//ie 滤镜旋转
+				function(r){ 
+				
+					var img = dom.get("img_" + self.rid);
+					var parent = img.parentNode;
+					img.style.width = "auto";
+					img.style.height = "auto"; 
+					img.style.position = "absolute"
+					img.style.top = "-1000px"; 
+					parent.style.position ="relative";
+					
+					switch (r) {
+						 case 1:
+						 case 3:
+							if(img.height > settings.width){ 
+								img.style.height = settings.width; 
+							}
+							
+							parent.style.height = img.width;
+							parent.style.width = img.height;
+							break;
+							
+						 case 0:
+						 case 2:
+							if(img.width > settings.width){ 
+								img.style.width = settings.width; 
+							}
+							parent.style.width = img.width;
+							parent.style.height = img.height;
+							break;
+					 }
+					
+					img.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ r +')';
+					img.style.top = "0px";
+					img.setAttribute("data-rotate", r );
+				} 
+				
+				:
+				
+				//canvas旋转
+				function(r){
+					var canvas = dom.get("canvas_" + self.rid) || document.createElement("canvas"),
+						context = canvas.getContext("2d"),
+						img = dom.get("img_" + self.rid),
+						x = 0, y = 0;
+						
+					canvas.setAttribute("data-action","smallImage");
+					canvas.id = "canvas_" + self.rid;
+					img.style.position = "absolute";
+					img.style.visibility = "hidden";
+					
+					switch (r) {
+						 case 0:
+							canvas.width = img.width;
+							canvas.height = img.height;
+							x =0; y = 0;
+							break;
+						 case 1:
+							canvas.width = img.height;
+							canvas.height = img.width;	
+							x = 0; y = -img.height;
+							break;							
+						 case 2:
+							canvas.width = img.width;
+							canvas.height = img.height;
+							x = -img.width; y = -img.height;
+							break;							
+						 case 3:
+							canvas.width = img.height;
+							canvas.height = img.width;
+							x = -img.width; y = 0;
+							break;
+					}
+					if(canvas.width > settings.width ){ 
+						canvas.style.width = settings.width + "px" 
+					}else {
+						canvas.style = "";
+					}
+					context.clearRect(0, 0, img.width, img.height);
+					context.save();
+					context.rotate(r * 90 * Math.PI / 180);
+					context.drawImage(img, x, y)
+					context.restore();
+					img.parentNode.appendChild(canvas);
+					img.setAttribute("data-rotate", r );
+			}
+		},
+	
+		action = target.getAttribute("data-action");
+	
+	control[action] && control[action]();
+	
+}
+
+var itemPic = dom.get("pic");
+itemPic.onclick = picHandle;
+</script>
+</body>
+</html>

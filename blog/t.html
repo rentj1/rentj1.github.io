@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>canvas绘制 二次贝塞尔曲线</title>
+<style>
+*{ margin:0; padding:0}
+#arc{float:left;  border:1px solid #ccc;}
+.info{ margin-left:5px; float:left; }
+</style>
+</head>
+
+<body>
+
+  
+<script>
+
+function parseXml(xmlText){
+	
+    try{
+        var text = xmlText;
+        //text = replaceAll(text,"&lt;","<");
+        //text = replaceAll(text,"&gt;",">");
+        //text = replaceAll(text,"&quot;","\"");
+        //alert(text);
+        //var myWin = window.open('','win','resize=yes,scrollbars=yes');
+        //myWin.document.getElementsByTagName('body')[0].innerHTML = text;
+        if (typeof DOMParser != "undefined") { 
+            // Mozilla, Firefox, and related browsers 
+            var parser=new DOMParser();
+            var doc=parser.parseFromString(text,"text/xml");
+            //alert(text);
+            return doc; 
+        }else if (typeof ActiveXObject != "undefined") { 
+                // Internet Explorer. 
+        var doc = new ActiveXObject("Microsoft.XMLDOM");  // Create an empty document 
+            doc.loadXML(text);            // Parse text into it 
+            return doc;                   // Return it 
+        }else{ 
+                // As a last resort, try loading the document from a data: URL 
+                // This is supposed to work in Safari. Thanks to Manos Batsis and 
+                // his Sarissa library (sarissa.sourceforge.net) for this technique. 
+                var url = "data:text/xml;charset=utf-8," + encodeURIComponent(text); 
+                var request = new XMLHttpRequest(); 
+                request.open("GET", url, false); 
+                request.send(null); 
+                return request.responseXML; 
+        }
+    }catch(err){
+        alert("There was a problem parsing the xml:\n" + err.message);
+    }
+}
+
+
+var oReq = new XMLHttpRequest();
+//oReq.setRequestHeader("Content-type", "text/xml");
+oReq.open("GET", "http://localhost:800/blog/list.xml", false);
+//oReq.overrideMimeType('text/xml');
+oReq.send(null);
+alert(oReq.responseXML.getElementById);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+.slider{ width:240px; height:135px; overflow:hidden; }
+.slider .info{ height:135px; position:relative; z-index:10; background-color:#000; opacity:0.5;}
+</style>
+
+</head>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<body>
+
+<div class="slider" id="slider">
+	<a href="#"><img src="http://cmsjs.eastmoney.com/data/images/546.png?dt=1347937923060" width="240" height="135" /></a>
+    <div class="info" id="info">
+    ddd
+    </div>
+</div>
+<script>
+var info = document.getElementById("info")
+var slider = document.getElementById("slider")
+slider.onmouseenter = function(event){
+
+	$("#info").animate({marginTop:-135},100)
+
+};
+
+slider.onmouseleave = function(event){
+
+	$("#info").animate({marginTop:0},100)		
+};
+
+
+function contains(element, child) {
+	var ret = false;
+	if (element.contains) {
+		ret = element != child && element.contains(child)
+	} else {
+		ret = !!(element.compareDocumentPosition(child) & 16);
+	}
+	
+	return ret;
+}
+
+function on(event, handel){
+	var related = event.relatedTarget;
+	var target = event.target;
+
+	if ( !related || (related !== target && !contains( target, related )) ) {
+		handel();
+	}
+}
+
+
+
+E = function(){
+   function elContains(a, b){
+        try{
+            return a.contains ? a != b && a.contains(b) : !!(a.compareDocumentPosition(b) & 16);
+        }catch(e){}
+         
+   }
+    function addEvt(el, type, fn){
+        function fun(e){
+            var a = e.currentTarget, b = e.relatedTarget;
+            if(!elContains(a, b) && a!=b){
+                fn.call(e.currentTarget,e);
+            }   
+        }   
+        if(el.addEventListener){
+            if(type=='mouseenter'){                 
+                el.addEventListener('mouseover', fun, false);                   
+            }else if(type=='mouseleave'){
+                el.addEventListener('mouseout', fun, false);
+            }else{
+                el.addEventListener(type, fn, false);
+            }
+        }else{
+            el.attachEvent('on' + type, fn);
+        }
+    }   
+    return {addEvt:addEvt};
+}();
+
+/*
+E.addEvt(slider,"mouseenter", function(){ 						   
+	$("#info").animate({marginTop:-135},100)						   
+});
+E.addEvt(slider,"mouseleave", function(){ 
+	$("#info").animate({marginTop:0},100)						   
+});
+*/
+
+/*
+
+事件冒泡，给生成的ajax委托事件
+影响mouseover,mouseout。替代mouseleave，mouseenter
+509.9 175.5
+mouseover 会在你进入子元素时把事件冒泡到父元素上
+mouseout 会在你离开子元素的时候就把事件冒泡到父元素上，也就是说不管你的鼠标是否还在父元素中，只要你一离开子元素，就会触发mouseout
+http://www.36ria.com/demo/hover/demo.html
+http://www.css88.com/archives/2297
+http://www.cnblogs.com/snandy/archive/2011/03/28/1997414.html
+
+slider.onmouseenter = function(event){
+
+			$("#info").animate({marginTop:-135},100)
+
+};
+
+slider.onmouseleave = function(event){
+
+			$("#info").animate({marginTop:0},100)		
+};
+
+$(slider).bind("mouseenter", function(){
+	$("#info").animate({marginTop:-135},100)
+});
+
+$(slider).bind("mouseleave", function(){
+	$("#info").animate({marginTop:0},100)		
+});
+
+$("#slider").hover(function(){
+							
+							
+},function(){
+	$("#info").animate({marginTop:0},100)		
+});*/
+</script>
+</body>
+</html>

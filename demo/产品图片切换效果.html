@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>产品图片切换效果演示：减速淡出，加速淡入</title>
+<script src="../scripts/base-0.1.js"></script>
+<style>
+a{ color:#000;  margin-top:5px; margin-left:20px;}
+a img{ border:none;}
+a:hover{ color:#f00;}
+h3{ margin:0; background-color:#ccc}
+
+#box{position:relative; border:1px solid #ccc; width:500px; margin:0 auto; overflow:hidden; height:360px;}
+#div{position:absolute; left:-20px; top:50px; text-align:center;  opacity:1; filter: alpha(opacity=100)}
+
+.about{ width:960px; margin:-360px auto 0; }
+</style>
+</head>
+
+<body>
+
+<div id="box">
+<h3>点击页面查看{产品图片切换效果}运行动画</h3>
+<div id="div">
+<a href="http://www.amazon.cn/gp/product/B008G7SHB8/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B008G7SHB8&linkCode=as2&tag=buyedcn-23"><img src="http://img10.360buyimg.com/n11/g9/M03/00/0A/rBEHalAxovgIAAAAAAENxlNeDYgAAAEBwE19TEAAQ3e596.jpg" id="img" /></a><br />
+<a href="http://www.amazon.cn/gp/product/B008G7SHB8/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B008G7SHB8&linkCode=as2&tag=buyedcn-23">ASP.NET MVC 3 高级编程</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B008G7SHB8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+</div>
+
+<script>
+var content = ['<a href="http://www.amazon.cn/gp/product/B008G7SHB8/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B008G7SHB8&linkCode=as2&tag=buyedcn-23"><img src="http://img10.360buyimg.com/n11/g9/M03/00/0A/rBEHalAxovgIAAAAAAENxlNeDYgAAAEBwE19TEAAQ3e596.jpg" /></a><br /><a href="http://www.amazon.cn/gp/product/B008G7SHB8/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B008G7SHB8&linkCode=as2&tag=buyedcn-23">ASP.NET MVC 3 高级编程</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B008G7SHB8" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />',
+'<a href="http://www.amazon.cn/gp/product/B0082226FU/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B0082226FU&linkCode=as2&tag=buyedcn-23"><img src="http://img10.360buyimg.com/n11/g5/M00/01/0F/rBEDik_HM6oIAAAAAAEnmSLItPAAAASggLAjbQAASex631.jpg" /></a><br /><a href="http://www.amazon.cn/gp/product/B0082226FU/ref=as_li_tf_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B0082226FU&linkCode=as2&tag=buyedcn-23">基于MVC的JavaScript Web富应用开发</a><img src="http://www.assoc-amazon.cn/e/ir?t=buyedcn-23&l=as2&o=28&a=B0082226FU" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />'
+];
+var i=false;
+
+document.onclick = function(){
+	//动画代码
+	var div = document.getElementById("div");
+
+	effect.animate(div, { left:500, opacity:0 }, 800,"easeOut",function(){
+		i = !i;
+		div.innerHTML = content[ Number(i) ];
+		effect.animate(div, { left:-20, opacity:100 }, 600,"easeIn");
+	});
+}
+</script>
+
+<div class="about">
+<a href="http://www.buyed.cn/blog/通用无缝滚动JS.html" target="_blank">通用无缝连续滚动JS</a>
+</div>
+<div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc22975f19ab24fcc86a8a6ab70ce140c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</body>
+</html>

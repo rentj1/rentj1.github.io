@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+a{ }
+a:link{}
+a:visited{ }
+a:hover{}
+a:active {} 
+
+</style>
+</head>
+
+<body>
+<h1>IE6 a display:block 没有触发haslayout的情况下可点击区域不变 <a href="#">演示</a></h1>
+
+示例代码：
+
+<div id="div1" style="border:1px solid #f00; width:200px; height:200px; padding:10px;">
+	<a href="#" style=" text-align:center;  display:block;   line-height:200px; background-color:#ccc"><b id="b1"></b>块链接</a>
+</div>
+
+效果如图：
+
+
+<p>
+
+下面是4种解决方法：<br />
+
+
+1、让a拥有haslaout 如: zoom:1 <a href="#">演示</a><br />
+
+2、链接内有一个拥有haslayout的子元素<a href="#">演示</a><br />
+
+3、上例中div1相对定位，b1绝对定位 <a href="#">演示</a><br />
+
+4、设置链接宽或者高 <a href="#">演示</a>
+
+</p>
+</body>
+</html>

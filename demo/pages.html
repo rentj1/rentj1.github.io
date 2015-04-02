@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文档标题</title>
+		<style type="text/css">
+		.current{ color: red}
+		.disable{ color: #ccc;}
+		</style>
+	</head>
+	<body>
+	<div id="pages"></div>
+
+	<script>
+
+	(function(){
+
+
+		function  handleClickPanel(e) {
+			
+			var selected = document.getElementById("Page_Selected_Index");
+			var selectedIndex = +selected.getAttribute("data-index");
+			var target;
+			var pageIndex;
+			
+			e = e || window.event;
+			target = e.target || e.srcElement;
+			pageIndex = target.getAttribute("data-index");
+
+			if(!pageIndex){
+				return;
+			}
+
+			if(pageIndex == "pre"){
+				pageIndex = selectedIndex - 1; 
+				if(pageIndex < 1){
+					pageIndex = 1;
+					return;
+				}
+				target = previous("a", selected);
+			}else if(pageIndex == "next"){
+				pageIndex = selectedIndex + 1; 
+				if(pageIndex > maxPageIndex){
+					pageIndex = maxPageIndex;
+					return;
+				}
+				target = next("a", selected);
+			}
+			
+			onchange(pageIndex);
+			
+			if(pageIndex >= startIndex + itemCount){
+				startIndex += 4;
+				render(pageIndex);
+				return;
+
+			}else if(pageIndex < startIndex){
+				startIndex -= 4;
+				if(startIndex < 1){
+					startIndex = 1;
+				}
+				render(pageIndex);
+				return;
+			}
+			
+			update(pageIndex, selected, target);
+		}
+		function update(pageIndex, selected, target){
+			var children = panel.children;
+				//上一页状态
+				if(pageIndex > 1){
+					children[0].className = "";
+				}else{
+					children[0].className = "disable";
+				}
+				
+				//下一页状态
+				if(pageIndex == maxPageIndex){
+					children[children.length-1].className = "disable";
+				}else{
+					children[children.length-1].className = "";
+				}
+				//当前页码状态
+				selected.removeAttribute("id");
+				selected.className = "";
+				target.className = "current";
+				target.id= "Page_Selected_Index";
+		}
+		function render(current){
+			var html = "";
+			var preHTML = "<span data-index='pre'>上一页</span> ";
+			var nextHTML = " <span data-index='next'>下一页</span>";
+			var endIndex = Math.min(startIndex + itemCount, maxPageIndex+1);			
+			var k = itemCount - (endIndex - startIndex);
+			
+			if( maxPageIndex > 1 ){
+				startIndex = startIndex - k ;
+			}
+			
+
+			for(var i = startIndex; i < endIndex; i++){
+				if(i == current){
+					html += "<a href='#' id='Page_Selected_Index' class='current' data-index='" + i + "'>" + i + "</a> ";
+				}else{
+					html += "<a href='#' data-index='" + i + "'>" + i + "</a> ";
+				}
+			}
+
+
+			if(current == 1){
+				preHTML = "<span class='disable' data-index='pre'>上一页</span> ";
+			}else if(current == maxPageIndex){
+				nextHTML = " <span class='disable' data-index='next'>下一页</span>";
+			}
+
+			panel.innerHTML = preHTML + html + nextHTML;	
+		}
+
+		function next(tag, context){
+
+			if(!context){
+				return null;
+			}
+			var elem = context.nextSibling;
+
+			do{
+				if(elem.tagName && elem.tagName.toUpperCase() == tag.toUpperCase()){
+					return elem;
+				}
+
+			} while(elem = elem.nextSibling)
+
+			return null;
+		}
+
+		function previous(tag, context){
+			if(!context){
+				return null;
+			}
+
+			var elem = context.previousSibling;
+			do{
+				if(elem.tagName && elem.tagName.toUpperCase() == tag.toUpperCase()){
+					return elem;
+				}
+
+			} while(elem = elem.previousSibling)
+			return null;
+
+		}
+
+		var itemCount = 10,
+			startIndex = 1;
+
+		var panel,
+			maxPageIndex;
+
+		var total,
+			size,
+			onchange;
+
+		window.PageNav = {
+
+			init:function(option){
+				total = option.total;
+				size = option.size;
+				onchange = option.onchange;
+				panel = document.getElementById(option.panelID);
+				itemCount = 10;
+				//startIndex = 1;
+				maxPageIndex = Math.ceil(total/size);
+				panel.onclick = handleClickPanel;
+				render(1);
+			}
+		}
+
+	}());
+
+
+	PageNav.init({
+		panelID:"pages",//分页控件容器ID
+		total:200,//总条数
+		size:10,//每页显示条数
+		onchange:function(i){
+			//分页回调
+			// setRedpacketDate(beginTime,endTime,defaultPage,selectPage,curStatus, initPageNav);
+			console.log(i);
+		}
+	})
+
+	</script>
+	</body>
+</html>

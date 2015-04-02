@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Javascript 继承模式</title>
+</head>
+
+<body>
+<script>
+var global = window;
+
+(function(ns,undefined){
+		  
+	//辅助对象：
+	var Class = {
+		
+		extends: function(SubClass, SuperClass){
+			
+			var F = function() {};
+			F.prototype = SuperClass.prototype;
+			SubClass.prototype = new F();
+			SubClass.prototype.constructor = SubClass;
+			
+			SubClass.base = SuperClass.prototype;
+			if(SuperClass.prototype.constructor == Object.prototype.constructor) {
+				SuperClass.prototype.constructor = SuperClass;
+			}
+		  
+		}
+	}
+	
+	global.Class = Class;
+}(global, undefined));
+
+//继承模式：
+function Person(name){
+	this.name = name;
+}
+
+Person.prototype = {
+	
+	getName: function(){
+		console.log("Person.prototype.getName")
+	},
+	
+	say: function(){
+		console.log("Person.prototype.say")
+	}
+};
+
+function Employee(title, name){
+	Employee.base.constructor.call(this, name);
+	this.title = title;
+}
+Class.extends(Employee, Person);
+
+//重写person.prototype.say
+Employee.prototype.say = function(){
+	Employee.base.say.call(this);//调用父类方法
+	console.log("Employee.prototype.say");
+};
+
+Employee.prototype.getTitle = function(){
+	console.log("Employee.prototype.getTitle")
+};
+
+var e = new Employee("前端", "jser");
+console.log(e.name)
+console.log(e.title)
+e.getName() 
+e.getTitle()
+e.say()
+
+//运行结果：
+//jser
+//前端
+//Person.prototype.getName
+//Employee.prototype.getTitle
+//Person.prototype.say
+//Employee.prototype.say
+</script>
+</body>
+</html>

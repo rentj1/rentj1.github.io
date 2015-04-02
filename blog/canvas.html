@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+ <canvas id="myCanvasTag" width="500" height="50" > </canvas>
+  <script>
+
+
+//绘图动画
+
+
+function ani(s, callback){	
+
+
+
+	var i = 1;
+
+	
+
+	var interval = setInterval(function(){	
+
+										
+
+		i = i +  Math.ceil( (s - i ) / 8 );		
+
+		
+
+		callback(i);
+
+		if( i >= s ){
+
+			clearInterval(interval);
+
+		}
+
+		
+
+	},10);	
+
+}
+
+
+
+
+ (function(){
+	var strokeStyle = "green";
+	var lineWidth = 3;
+	var canvas = document.getElementById("myCanvasTag");
+	var ctx = canvas.getContext ? canvas.getContext("2d") : null;
+	var data = [];
+	
+	if(!ctx) return;
+	ctx.lineWidth = lineWidth;
+	ctx.strokeStyle = strokeStyle;
+	
+	//随机数组
+	function randomArray() {
+	
+		var array = [];
+	
+		var length = Math.floor(canvas.width / (lineWidth + 1));
+	
+		
+	
+		for (var i = 1; i <= length; i++) {
+	
+			array.push(i);
+	
+		}
+		
+		array.sort(function() { return (Math.round(Math.random()) - 0.5); });
+	
+		return array;
+	
+	}
+	
+	function paint(array) {
+		var x, height;
+	
+	
+		for (var i = 0; i < array.length; i++) {
+	
+			x = (lineWidth + 1) * i + lineWidth / 2;
+			
+			height = Math.ceil(Math.random() *  canvas.height);
+		
+			(function(x, i){
+				
+				var di = data[i] || 0,
+					 hi = height - di;
+					 
+				var func;
+				
+				//console.log("data[i] = "+di+" "+" height = " +height);
+				if(di && ( hi < 0 ) ){
+					
+					hi = Math.abs(hi);
+					
+					func = function(height){		
+						ctx.clearRect((x-lineWidth / 2),  canvas.height - di, lineWidth, height);		  
+					};
+					
+					ani(hi, func);
+					
+				}else {
+					
+					func = function(height){
+					
+						ctx.beginPath();
+						
+						ctx.moveTo(x, canvas.height);
+						
+						ctx.lineTo(x, canvas.height - height);
+						
+						ctx.stroke();
+						
+						ctx.closePath();				  				  
+					
+					};
+					
+					ani(height, func);
+				}
+			}(x, i));
+			
+			data[i] =  height;
+		}
+	
+	}
+
+
+	var strat = setTimeout(function(){		
+								
+		paint(randomArray());
+		strat = setTimeout(arguments.callee, 400 );
+	}, 400);
+	
+	window.onblur = function(){
+		clearTimeout(strat);
+		strat = false;
+	};
+	
+	window.onfocus = function(){
+		if(!strat){
+			ctx.clearRect(0,0,  canvas.Width, canvas.height);	
+			
+			strat = setTimeout(function(){					 
+				paint(randomArray());
+				strat = setTimeout(arguments.callee, 400 );
+			}, 400);
+		}
+		
+	}
+	
+}())
+
+</script>
+
+</div>
+
+</body>
+</html>
